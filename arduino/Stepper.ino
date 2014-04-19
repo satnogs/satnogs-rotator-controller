@@ -4,7 +4,7 @@ void stepper_move()
   {
     digitalWrite(DIR_AZ, HIGH);
     digitalWrite(STEP_AZ, HIGH); 
-    stepPosAz++;
+    stepPosAz++;    
     stepAz--;
   }
   else if(stepAz<0)
@@ -14,6 +14,10 @@ void stepper_move()
     stepPosAz--;
     stepAz++;
   }
+  if (stepPosAz > SPD*60)
+    stepPosAz = 0;
+  else if (stepPosAz < 0)
+    stepPosAz = SPD*60; 
 
   if(stepEl>0)
   {
