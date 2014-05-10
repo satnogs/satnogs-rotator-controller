@@ -19,12 +19,13 @@ void cmd_proc()
         strncpy(data, buffer+2, 100);
         double cmdAz = atof(data);
         
-        stepAz = path(cmdAz);        
+        stepAz = deg2step(cmdAz)-stepPosAz;        
       }
       else if (buffer[0] == 'E' && buffer[1] == 'L')
       {
         strncpy(data, buffer+2, 10);
         double cmdEl = atof(data);
+        
         stepEl = deg2step(cmdEl)-stepPosEl;
       }
       else if (buffer[0] == 'S' && buffer[1] == 'A')

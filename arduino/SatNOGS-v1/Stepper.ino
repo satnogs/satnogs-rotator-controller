@@ -4,7 +4,7 @@ void stepper_move()
   {
     digitalWrite(DIR_AZ, HIGH);
     digitalWrite(STEP_AZ, HIGH); 
-    stepPosAz++;    
+    stepPosAz++;
     stepAz--;
   }
   else if(stepAz<0)
@@ -14,10 +14,6 @@ void stepper_move()
     stepPosAz--;
     stepAz++;
   }
-  if (stepPosAz > SPD*60)
-    stepPosAz = 0;
-  else if (stepPosAz < 0)
-    stepPosAz = SPD*60; 
 
   if(stepEl>0)
   {
@@ -39,26 +35,6 @@ void stepper_move()
   digitalWrite(STEP_EL, LOW);
   delay(T_STEPPER);
 
-}
-
-int path( double cmdAz)
-{
-  int sign = 0, stepTemp;
-  double PosAz = cmdAz - step2deg(stepPosAz);
-  double distAz = abs(PosAz);
-      
-  if (distAz < 180)
-    stepAz = deg2step(PosAz);
-  else
-  {
-    if (PosAz > 0)
-      sign = -1;
-    else
-      sign = 1;
-    stepTemp = deg2step((360-PosAz)*sign);
-  }
-  
-  return stepTemp;
 }
 
 int deg2step(double deg)
