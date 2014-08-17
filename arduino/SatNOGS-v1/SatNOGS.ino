@@ -2,15 +2,16 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define DIR_AZ 8
-#define STEP_AZ 9
-#define EN_AZ 7
+#define DIR_AZ 5
+#define STEP_AZ 4
 
-#define DIR_EL 10
-#define STEP_EL 11
-#define EN_EL 12
+#define DIR_EL 6
+#define STEP_EL 7
 
-#define SPD 200 //step per degree
+#define MS1 9
+#define EN 8
+
+#define SPR 200 //step per revolution
 #define T_DEALY 10000
 #define T_STEPPER 1
 
@@ -25,16 +26,20 @@ void setup()
 {
   pinMode(DIR_AZ, OUTPUT);
   pinMode(STEP_AZ, OUTPUT);
-  pinMode(EN_AZ, OUTPUT);
   digitalWrite(EN_AZ, LOW);
   digitalWrite(DIR_AZ, LOW);
   
   pinMode(DIR_EL, OUTPUT);
   pinMode(STEP_EL, OUTPUT);
-  pinMode(EN_EL, OUTPUT);
   digitalWrite(EN_EL, LOW);
   digitalWrite(DIR_EL, LOW);
-  
+  /* Enable/Disable Motors*/
+  pinMode(EN, OUTPUT);
+  digitalWrite(EN, HIGH);
+  /* Step size */
+  pinMode(MS1, OUTPUT);
+  digitalWrite(MS1, LOW); //Full step
+ 
   Serial.begin(19200);
 }
 
@@ -43,16 +48,12 @@ void loop()
   /*Time Check*/
   if (t1 == 0)
     t1 = millis();
+  /*Disable Motors*/
   if (stepAz == 0 && stepEl == 0 && millis()-t1 > T_DEALY)
-  {
-    digitalWrite(EN_AZ, HIGH);
-    digitalWrite(EN_EL, HIGH);
-  }
+    digitalWrite(EN, HIGH);
+  /*Enable Motors*/
   else
-  {
-    digitalWrite(EN_AZ, LOW);
-    digitalWrite(EN_EL, LOW);
-  }  
+    digitalWrite(EN, LOW);
   
   cmd_proc();
   

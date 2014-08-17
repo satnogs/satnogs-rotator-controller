@@ -1,3 +1,4 @@
+/* Send pulses to stepper motor drivers */
 void stepper_move()
 {
   if(stepAz>0)
@@ -36,13 +37,13 @@ void stepper_move()
   delay(T_STEPPER);
 
 }
-
+/* Convert degrees to steps */
 int deg2step(double deg)
 {
-  return(60*SPD*deg/360);
+  return(60*SPR*deg/360);
 }
-
+/* Convert steps to degrees */
 float step2deg(int Step)
 {
-  return(360*Step/(SPD*60));
+  return(360*Step/(SPR*60));
 }
