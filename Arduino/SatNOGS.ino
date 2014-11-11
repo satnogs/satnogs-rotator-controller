@@ -1,10 +1,10 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
+#include <AccelStepper.h>
 
 #define DIR_AZ 18
 #define STEP_AZ 10
-
 #define DIR_EL 6
 #define STEP_EL 7
 
@@ -13,30 +13,32 @@
 
 #define SPR 200 //Step Per Revolution
 #define RATIO 60 //Gear ratio
-#define T_DEALY 10000 //Time to disable the motors
-#define T_STEPPER 1000 //2*T_STEPPER is the period of pulses
+#define T_DEALY 20000 //Time to disable the motors
 
 /*Global Variables*/
-long t_DIS = 0; //time to disable the Motors
+unsigned long t_DIS = 0; //time to disable the Motors
+/*Define a stepper and the pins it will use*/
+AccelStepper AZstepper(1, STEP_AZ, DIR_AZ);
+AccelStepper ELstepper(1, STEP_EL, DIR_EL);
+
 
 void setup()
-{
-  /*Define the Stepper drivers PIN's*/
-  pinMode(DIR_AZ, OUTPUT);
-  pinMode(STEP_AZ, OUTPUT);  
-  pinMode(DIR_EL, OUTPUT);
-  pinMode(STEP_EL, OUTPUT);
-  digitalWrite(STEP_AZ, LOW);
-  digitalWrite(DIR_AZ, LOW);
-  digitalWrite(STEP_EL, LOW);
-  digitalWrite(DIR_EL, LOW);
+{  
+  /*Change these to suit your stepper if you want*/
+  AZstepper.setMaxSpeed(400);
+  AZstepper.setAcceleration(100);
+  
+  /*Change these to suit your stepper if you want*/
+  ELstepper.setMaxSpeed(400);
+  ELstepper.setAcceleration(100);
+  
   /*Enable Motors*/
   pinMode(EN, OUTPUT);
   digitalWrite(EN, LOW);
-  /*Step size */
+  /*Step size*/
   pinMode(MS1, OUTPUT);
   digitalWrite(MS1, LOW); //Full step
- 
+  /*Serial Communication*/
   Serial.begin(19200);
 }
 
@@ -45,30 +47,26 @@ void loop()
   /*Define the steps*/
   static int AZstep = 0;
   static int ELstep = 0;
-  /*Define the steps from the start of motion*/
-  static int AZstepPos = 0;
-  static int ELstepPos = 0;
   
   /*Time Check*/
   if (t_DIS == 0)
     t_DIS = millis();
+  
   /*Disable Motors*/
-  if (AZstep == 0 && ELstep == 0 && millis()-t_DIS > T_DEALY)
+  if (AZstep == AZstepper.currentPosition() && ELstep == ELstepper.currentPosition() && millis()-t_DIS > T_DEALY)
     digitalWrite(EN, HIGH);
   /*Enable Motors*/
   else
     digitalWrite(EN, LOW);
-  
+    
   /*Read the steps from serial*/
-  cmd_proc(AZstep, ELstep, AZstepPos, AZstepPos);
+  cmd_proc(AZstep, ELstep);
   /*Move the Azimuth & Elevation Motor*/
-  stepper_move(AZstep, ELstep, AZstepPos, ELstepPos);
-  Serial.print(AZstepPos);Serial.print("\t");
-  Serial.println(AZstep);
+  stepper_move(AZstep, ELstep);
 }
 
 /*EasyComm 2 Protocol & Calculate the steps*/
-void cmd_proc(int &stepAz, int &stepEl, int stepPosAz, int stepPosEl)
+void cmd_proc(int &stepAz, int &stepEl)
 {
   /*Serial*/
   static char buffer[256];
@@ -90,7 +88,7 @@ void cmd_proc(int &stepAz, int &stepEl, int stepPosAz, int stepPosEl)
         /*Get the absolute value of angle*/
         double angleAz = atof(data);
         /*Calculate the steps*/
-        stepAz = deg2step(angleAz) - stepPosAz;
+        stepAz = deg2step(angleAz);
       }
       else if (buffer[0] == 'E' && buffer[1] == 'L')
       {
@@ -98,15 +96,15 @@ void cmd_proc(int &stepAz, int &stepEl, int stepPosAz, int stepPosEl)
         /*Get the absolute value of angle*/
         double angleEl = atof(data);
         /*Calculate the steps*/
-        stepEl = deg2step(angleEl) - stepPosEl;
+        stepEl = deg2step(angleEl);
       }
       else if (buffer[0] == 'S' && buffer[1] == 'A')
       {
-        stepAz = 0;
+        stepAz = AZstepper.currentPosition();
       }
       else if (buffer[0] == 'S' && buffer[1] == 'E')
       {
-        stepEl = 0;
+        stepEl = ELstepper.currentPosition();;
       }
       counter = 0;
       /*Reset the disable motor time*/
@@ -121,42 +119,13 @@ void cmd_proc(int &stepAz, int &stepEl, int stepPosAz, int stepPosEl)
 }
 
 /*Send pulses to stepper motor drivers*/
-void stepper_move(int &stepAz, int &stepEl, int &stepPosAz, int &stepPosEl)
+void stepper_move(int stepAz, int stepEl)
 {
-  if(stepAz > 0)
-  {
-    digitalWrite(DIR_AZ, HIGH);
-    digitalWrite(STEP_AZ, HIGH); 
-    stepPosAz++;
-    stepAz--;
-  }
-  else if(stepAz < 0)
-  {
-    digitalWrite(DIR_AZ, LOW);
-    digitalWrite(STEP_AZ, HIGH);
-    stepPosAz--;
-    stepAz++;
-  }
-
-  if(stepEl > 0)
-  {
-    digitalWrite(DIR_EL, LOW);
-    digitalWrite(STEP_EL, HIGH); 
-    stepPosEl++;
-    stepEl--;
-  }
-  else if(stepEl < 0)
-  {
-    digitalWrite(DIR_EL, HIGH);
-    digitalWrite(STEP_EL, HIGH);
-    stepPosEl--;
-    stepEl++;
-  }
-  
-  delayMicroseconds(T_STEPPER);
-  digitalWrite(STEP_AZ, LOW);
-  digitalWrite(STEP_EL, LOW);
-  delayMicroseconds(T_STEPPER);
+  AZstepper.moveTo(stepAz);
+  ELstepper.moveTo(stepEl);
+    
+  AZstepper.run();
+  ELstepper.run();
 }
 
 /*Convert degrees to steps*/
