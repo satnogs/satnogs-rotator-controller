@@ -13,7 +13,7 @@
 
 #define SPR 200 //Step Per Revolution
 #define RATIO 60 //Gear ratio
-#define T_DELAY 20000 //Time to disable the motors in millisecond
+#define T_DELAY 60000 //Time to disable the motors in millisecond
 
 #define HOME_AZ 4 //Homing switch for Azimuth
 #define HOME_EL 5 //Homing switch for Elevation
@@ -53,9 +53,10 @@ void setup()
   /*Serial Communication*/
   Serial.begin(19200);
   /*Initial Homing*/
-  Initial_Homing();
+  Homing(deg2step(-ANGLE_SCANNING_MULT), deg2step(-ANGLE_SCANNING_MULT));
 }
 
+/*Homing Function*/
 void loop()
 { 
   /*Define the steps*/
@@ -65,10 +66,12 @@ void loop()
   /*Time Check*/
   if (t_DIS == 0)
     t_DIS = millis();
-  
+
   /*Disable Motors*/
   if (AZstep == AZstepper.currentPosition() && ELstep == ELstepper.currentPosition() && millis()-t_DIS > T_DELAY)
+  {
     digitalWrite(EN, HIGH);
+  }
   /*Enable Motors*/
   else
     digitalWrite(EN, LOW);
@@ -79,14 +82,12 @@ void loop()
   stepper_move(AZstep, ELstep);
 }
 
-void Initial_Homing()
+void Homing(int AZsteps, int ELsteps)
 {
   int value_Home_AZ = HIGH;
   int value_Home_EL = HIGH;
   int n_AZ = 1; //Times that AZ angle has changed
   int n_EL = 1; //Times that EL angle has changed
-  int AZsteps = deg2step(-n_AZ*ANGLE_SCANNING_MULT); //Initial scanning steps for AZ 
-  int ELsteps = deg2step(-n_EL*ANGLE_SCANNING_MULT); //Initial scanning steps for EL
   boolean isHome_AZ = false;
   boolean isHome_EL = false;
   
@@ -137,15 +138,15 @@ void Initial_Homing()
   /*Delay to Deccelerate*/
   long time = millis();  
   while(millis() - time < HOME_DELAY)
-  {   
+  {  
     AZstepper.run();
     ELstepper.run();
   }
   /*Reset the steps*/
   AZstepper.setCurrentPosition(0);
-  ELstepper.setCurrentPosition(0);   
+  ELstepper.setCurrentPosition(0); 
 }
-  
+ 
 /*EasyComm 2 Protocol & Calculate the steps*/
 void cmd_proc(int &stepAz, int &stepEl)
 {
@@ -187,6 +188,14 @@ void cmd_proc(int &stepAz, int &stepEl)
       {
         stepEl = ELstepper.currentPosition();;
       }
+      else if (buffer[0] == 'H' && buffer[1] == 'M')
+      {
+        /*Move the steppers to initial position*/
+        Homing(0,0);
+        /*Zero the steps*/
+        stepAz = 0;
+        stepEl = 0;
+      }
       counter = 0;
       /*Reset the disable motor time*/
       t_DIS = 0;
@@ -208,20 +217,20 @@ void error(int num_error)
     case (0):
       while(1)
       {
-        Serial.println("Error[0]: Azimuth Homing");
+        Serial.println("AL001");
         delay(100);
       }
     /*Elevation error*/
     case (1):
       while(1)
       {
-        Serial.println("Error[1]: Elevation Homing");
+        Serial.println("AL002");
         delay(100);
       }
     default:
       while(1)
       {
-        Serial.println("Error[?]: Unknown error");
+        Serial.println("AL000");
         delay(100);
       }
   }
