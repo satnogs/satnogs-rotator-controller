@@ -1,3 +1,4 @@
+
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -18,9 +19,9 @@
 #define HOME_AZ 4 //Homing switch for Azimuth
 #define HOME_EL 5 //Homing switch for Elevation
 /*The MAX_ANGLE depends of ANGLE_SCANNING_MULT and maybe misbehave for large values*/
-#define ANGLE_SCANNING_MULT 10 //Angle scanning multiplier
-#define MAX_AZ_ANGLE 200 //Maximum Angle of Azimuth for homing scanning
-#define MAX_EL_ANGLE 100 //Maximum Angle of Elevation for homing scanning
+#define ANGLE_SCANNING_MULT 180 //Angle scanning multiplier
+#define MAX_AZ_ANGLE 360 //Maximum Angle of Azimuth for homing scanning
+#define MAX_EL_ANGLE 360 //Maximum Angle of Elevation for homing scanning
 
 #define HOME_DELAY 6000 //Time for homing Decceleration in millisecond
 
@@ -56,7 +57,6 @@ void setup()
   Homing(deg2step(-ANGLE_SCANNING_MULT), deg2step(-ANGLE_SCANNING_MULT));
 }
 
-/*Homing Function*/
 void loop()
 { 
   /*Define the steps*/
@@ -82,6 +82,7 @@ void loop()
   stepper_move(AZstep, ELstep);
 }
 
+/*Homing Function*/
 void Homing(int AZsteps, int ELsteps)
 {
   int value_Home_AZ = HIGH;
@@ -161,17 +162,35 @@ void cmd_proc(int &stepAz, int &stepEl)
   {
     incomingByte = Serial.read();
     /*new data*/
-    if (incomingByte == '\n' || incomingByte == ' ' || incomingByte == '\r')
+    if (incomingByte == '\n')
     {
       buffer[counter]=0;
       if (buffer[0] == 'A' && buffer[1] == 'Z')
       {
-        strncpy(data, buffer+2, 100);
-        /*Get the absolute value of angle*/
-        double angleAz = atof(data);
-        /*Calculate the steps*/
-        stepAz = deg2step(angleAz);
+        /* Get position */
+        if (buffer[2] == ' ' && buffer[3] == 'E' && buffer[4] == 'L')
+        {
+          Serial.print(4);
+
+          stepAz = AZstepper.currentPosition();
+          stepEl = ELstepper.currentPosition();
+          Serial.print("AZ");
+          Serial.print(step2deg(stepAz));
+          Serial.print(" ");
+          Serial.print("EL");
+          Serial.println(step2deg(stepEl));
+        }
+        /* Move Azimuth */
+        else
+        {
+          strncpy(data, buffer+2, 100);
+          /*Get the absolute value of angle*/
+          double angleAz = atof(data);
+          /*Calculate the steps*/
+          stepAz = deg2step(angleAz);
+        }
       }
+      /* Move elevation */
       else if (buffer[0] == 'E' && buffer[1] == 'L')
       {
         strncpy(data, buffer+2, 10);
@@ -180,22 +199,21 @@ void cmd_proc(int &stepAz, int &stepEl)
         /*Calculate the steps*/
         stepEl = deg2step(angleEl);
       }
-      else if (buffer[0] == 'S' && buffer[1] == 'A')
+      /* Stop Moving */
+      else if (buffer[0] == 'S' && buffer[1] == 'A' && buffer[2] == ' ' && buffer[3] == 'S' && buffer[4] == 'E')
       {
         stepAz = AZstepper.currentPosition();
+        stepEl = ELstepper.currentPosition();
       }
-      else if (buffer[0] == 'S' && buffer[1] == 'E')
-      {
-        stepEl = ELstepper.currentPosition();;
-      }
-      else if (buffer[0] == 'H' && buffer[1] == 'M')
+      /* Reset the rotator */
+      else if (buffer[0] == 'R' && buffer[1] == 'E' && buffer[2] == 'S' && buffer[3] == 'E' && buffer[4] == 'T')
       {
         /*Move the steppers to initial position*/
         Homing(0,0);
         /*Zero the steps*/
         stepAz = 0;
         stepEl = 0;
-      }
+      }      
       counter = 0;
       /*Reset the disable motor time*/
       t_DIS = 0;
