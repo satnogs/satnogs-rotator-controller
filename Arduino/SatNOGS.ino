@@ -1,4 +1,3 @@
-
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -30,7 +29,6 @@ unsigned long t_DIS = 0; //time to disable the Motors
 /*Define a stepper and the pins it will use*/
 AccelStepper AZstepper(1, STEP_AZ, DIR_AZ);
 AccelStepper ELstepper(1, STEP_EL, DIR_EL);
-
 
 void setup()
 {  
@@ -152,10 +150,14 @@ void Homing(int AZsteps, int ELsteps)
 void cmd_proc(int &stepAz, int &stepEl)
 {
   /*Serial*/
-  static char buffer[256];
+  char buffer[256];
   char incomingByte;
-  static int counter=0;
+  char *p=buffer;
+  char *str;
+  int counter=0;
   char data[100];
+  
+  double angleAz,angleEl;
   
   /*Read from serial*/
   while (Serial.available() > 0)
@@ -164,40 +166,40 @@ void cmd_proc(int &stepAz, int &stepEl)
     /*new data*/
     if (incomingByte == '\n')
     {
-      buffer[counter]=0;
+      p = buffer;
+      buffer[counter] = 0;
       if (buffer[0] == 'A' && buffer[1] == 'Z')
       {
-        /* Get position */
         if (buffer[2] == ' ' && buffer[3] == 'E' && buffer[4] == 'L')
         {
-          Serial.print(4);
-
-          stepAz = AZstepper.currentPosition();
-          stepEl = ELstepper.currentPosition();
+          /* Get position */
           Serial.print("AZ");
-          Serial.print(step2deg(stepAz));
+          Serial.print(step2deg(AZstepper.currentPosition()));
           Serial.print(" ");
           Serial.print("EL");
-          Serial.println(step2deg(stepEl));
+          Serial.println(step2deg(ELstepper.currentPosition()));
         }
-        /* Move Azimuth */
         else
         {
-          strncpy(data, buffer+2, 100);
           /*Get the absolute value of angle*/
-          double angleAz = atof(data);
+          str = strtok_r(p, " " , &p);
+          strncpy(data, str+2, 10);
+          angleAz = atof(data);
           /*Calculate the steps*/
           stepAz = deg2step(angleAz);
+
+          /*Get the absolute value of angle*/
+          str = strtok_r(p, " " , &p);
+          if (str[0] == 'E' && str[1] == 'L')
+          {
+            strncpy(data, str+2, 10);
+            angleEl = atof(data);
+            /*Calculate the steps*/
+            stepEl = deg2step(angleEl);
+          }
+          Serial.println(angleAz);
+          Serial.println(angleEl);
         }
-      }
-      /* Move elevation */
-      else if (buffer[0] == 'E' && buffer[1] == 'L')
-      {
-        strncpy(data, buffer+2, 10);
-        /*Get the absolute value of angle*/
-        double angleEl = atof(data);
-        /*Calculate the steps*/
-        stepEl = deg2step(angleEl);
       }
       /* Stop Moving */
       else if (buffer[0] == 'S' && buffer[1] == 'A' && buffer[2] == ' ' && buffer[3] == 'S' && buffer[4] == 'E')
@@ -273,5 +275,5 @@ int deg2step(double deg)
 /*Convert steps to degrees*/
 double step2deg(int Step)
 {
-  return(360*Step/(SPR*RATIO));
+  return(360.00*Step/(SPR*RATIO));
 }
