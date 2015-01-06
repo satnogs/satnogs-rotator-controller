@@ -163,8 +163,21 @@ void cmd_proc(int &stepAz, int &stepEl)
   while (Serial.available() > 0)
   {
     incomingByte = Serial.read();
+    /* XXX: Get position using custom and test code */
+    if (incomingByte == '!')
+    {
+      /* Get position */
+      Serial.print("TM");
+      Serial.print(1);
+      Serial.print(" ");
+      Serial.print("AZ");
+      Serial.print(10*step2deg(AZstepper.currentPosition()), 1);
+      Serial.print(" ");
+      Serial.print("EL");
+      Serial.println(10*step2deg(ELstepper.currentPosition()), 1);
+    }
     /*new data*/
-    if (incomingByte == '\n')
+    else if (incomingByte == '\n')
     {
       p = buffer;
       buffer[counter] = 0;
