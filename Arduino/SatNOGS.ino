@@ -203,12 +203,24 @@ void cmd_proc(int &stepAz, int &stepEl)
       /* Stop Moving */
       else if (buffer[0] == 'S' && buffer[1] == 'A' && buffer[2] == ' ' && buffer[3] == 'S' && buffer[4] == 'E')
       {
+        /* Get position */
+        Serial.print("AZ");
+        Serial.print(step2deg(AZstepper.currentPosition()), 1);
+        Serial.print(" ");
+        Serial.print("EL");
+        Serial.println(step2deg(ELstepper.currentPosition()), 1);
         stepAz = AZstepper.currentPosition();
         stepEl = ELstepper.currentPosition();
       }
       /* Reset the rotator */
       else if (buffer[0] == 'R' && buffer[1] == 'E' && buffer[2] == 'S' && buffer[3] == 'E' && buffer[4] == 'T')
       {
+        /* Get position */
+        Serial.print("AZ");
+        Serial.print(step2deg(AZstepper.currentPosition()), 1);
+        Serial.print(" ");
+        Serial.print("EL");
+        Serial.println(step2deg(ELstepper.currentPosition()), 1);
         /*Move the steppers to initial position*/
         Homing(0,0);
         /*Zero the steps*/
