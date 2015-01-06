@@ -197,8 +197,6 @@ void cmd_proc(int &stepAz, int &stepEl)
             /*Calculate the steps*/
             stepEl = deg2step(angleEl);
           }
-          Serial.println(angleAz);
-          Serial.println(angleEl);
         }
       }
       /* Stop Moving */
