@@ -174,10 +174,11 @@ void cmd_proc(int &stepAz, int &stepEl)
         {
           /* Get position */
           Serial.print("AZ");
-          Serial.print(step2deg(AZstepper.currentPosition()));
+          Serial.print(step2deg(AZstepper.currentPosition()), 1);
           Serial.print(" ");
           Serial.print("EL");
-          Serial.println(step2deg(ELstepper.currentPosition()));
+          Serial.print(step2deg(ELstepper.currentPosition()), 1);
+          Serial.println(" ");
         }
         else
         {
