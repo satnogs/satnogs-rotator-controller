@@ -1,0 +1,18 @@
+ Part      Value                          Device                         Package            Description                          
+AZIMUTH   POLOLU-A4983POLOLU-A4983       POLOLU-A4983POLOLU-A4983       POLOLU-A4983                                            
+C1        100uF                          CPOL-EUE2.5-6                  E2,5-6             POLARIZED CAPACITOR, European symbol 
+C2        100uF                          CPOL-EUE2.5-6                  E2,5-6             POLARIZED CAPACITOR, European symbol 
+ELEVATION POLOLU-A4983POLOLU-A4983       POLOLU-A4983POLOLU-A4983       POLOLU-A4983                                            
+IO        1                              PINHD-1X8                      1X08               PIN HEADER                           
+J1        2                              HEADER-2P-65/35MIL             2P-2.54-65/35MIL                                        
+J2        3                              HEADER-2P-65/35MIL             2P-2.54-65/35MIL                                        
+J3        4                              HEADER-2X3P-2.54               2X3P-2.54-65/35MIL                                      
+MOTOR1    2                              AK500/4                        AK500/4            CONNECTOR                            
+MOTOR2    3                              AK500/4                        AK500/4            CONNECTOR                            
+PWR       1                              AK500/2                        AK500/2            CONNECTOR                            
+R5        10k                            RESISTORPTH-1/4W               AXIAL-0.4          Resistor                             
+R6        10k                            RESISTORPTH-1/4W               AXIAL-0.4          Resistor                             
+R7        100k                           RESISTORPTH-1/4W               AXIAL-0.4          Resistor                             
+R8        100k                           RESISTORPTH-1/4W               AXIAL-0.4          Resistor                             
+SJ1       SJ1                            SJW                            SJW                SMD solder JUMPER                    
+UC        ARDUINO_PRO_MICROARDUINO_BOARD ARDUINO_PRO_MICROARDUINO_BOARD ARDUINO_MICRO_PRO                                       
