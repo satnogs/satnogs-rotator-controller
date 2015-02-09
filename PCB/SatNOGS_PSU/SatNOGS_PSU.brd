@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -20,8 +20,8 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -444,14 +444,14 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="U$1" library="LM2596-Breakout" package="LM2596-BREAKOUT" value="LM2596-BREAKOUTLM2596-BREAKOUT" x="33.02" y="12.7" rot="R90"/>
-<element name="PWR_IN" library="con-ptr500" package="AK500/2" value="1" x="5.08" y="12.7" rot="R270">
+<element name="LM2596" library="LM2596-Breakout" package="LM2596-BREAKOUT" value="LM2596-BREAKOUTLM2596-BREAKOUT" x="33.02" y="12.7" rot="R90"/>
+<element name="VIN" library="con-ptr500" package="AK500/2" value="1" x="5.08" y="12.7" rot="R270">
 <attribute name="OC_NEWARK" value="unknown" x="-41.91" y="-24.13" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MPN" value="" x="-41.91" y="-24.13" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="MF" value="" x="-41.91" y="-24.13" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="OC_FARNELL" value="unknown" x="-41.91" y="-24.13" size="1.778" layer="27" rot="R270" display="off"/>
 </element>
-<element name="+12V" library="con-ptr500" package="AK500/2" value="2" x="60.96" y="11.43" rot="R90">
+<element name="VOUT" library="con-ptr500" package="AK500/2" value="2" x="60.96" y="11.43" rot="R90">
 <attribute name="OC_NEWARK" value="unknown" x="107.95" y="59.69" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MPN" value="" x="107.95" y="59.69" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="MF" value="" x="107.95" y="59.69" size="1.778" layer="27" rot="R90" display="off"/>
@@ -471,10 +471,10 @@ design rules under a new name.</description>
 </element>
 </elements>
 <signals>
-<signal name="+12V">
-<contactref element="U$1" pad="4"/>
-<contactref element="+12V" pad="2"/>
-<contactref element="PWR_IN" pad="1"/>
+<signal name="VIN">
+<contactref element="LM2596" pad="4"/>
+<contactref element="VOUT" pad="2"/>
+<contactref element="VIN" pad="1"/>
 <wire x1="46.99" y1="13.97" x2="62.23" y2="13.97" width="1.27" layer="16"/>
 <wire x1="62.23" y1="13.97" x2="60.96" y2="13.9446" width="1.27" layer="16"/>
 <wire x1="5.08" y1="15.2146" x2="5.08" y2="19.05" width="1.27" layer="16"/>
@@ -485,7 +485,7 @@ design rules under a new name.</description>
 <wire x1="39.6875" y1="21.2725" x2="46.99" y2="13.97" width="1.27" layer="16"/>
 </signal>
 <signal name="+5V">
-<contactref element="U$1" pad="3"/>
+<contactref element="LM2596" pad="3"/>
 <contactref element="+5V" pad="2"/>
 <wire x1="52.3875" y1="21.2725" x2="54.2925" y2="21.2725" width="1.27" layer="16"/>
 <wire x1="54.2925" y1="21.2725" x2="57.15" y2="24.13" width="1.27" layer="16"/>
@@ -504,10 +504,10 @@ design rules under a new name.</description>
 <wire x1="46.99" y1="21.59" x2="52.07" y2="21.59" width="0.8128" layer="16"/>
 </signal>
 <signal name="GND">
-<contactref element="PWR_IN" pad="2"/>
-<contactref element="U$1" pad="1"/>
-<contactref element="U$1" pad="2"/>
-<contactref element="+12V" pad="1"/>
+<contactref element="VIN" pad="2"/>
+<contactref element="LM2596" pad="1"/>
+<contactref element="LM2596" pad="2"/>
+<contactref element="VOUT" pad="1"/>
 <contactref element="+5V" pad="1"/>
 <wire x1="5.08" y1="10.1854" x2="7.5946" y2="10.1854" width="1.27" layer="16"/>
 <wire x1="7.5946" y1="10.1854" x2="13.97" y2="3.81" width="1.27" layer="16"/>

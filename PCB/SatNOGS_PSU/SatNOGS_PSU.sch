@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.1.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -488,9 +488,9 @@ DIN A4, landscape with location and doc. field</description>
 </class>
 </classes>
 <parts>
-<part name="U$1" library="LM2596-Breakout" deviceset="LM2596-BREAKOUT" device="LM2596-BREAKOUT"/>
-<part name="PWR_IN" library="con-ptr500" deviceset="AK500/2" device="" value="1"/>
-<part name="+12V" library="con-ptr500" deviceset="AK500/2" device="" value="2"/>
+<part name="LM2596" library="LM2596-Breakout" deviceset="LM2596-BREAKOUT" device="LM2596-BREAKOUT"/>
+<part name="VIN" library="con-ptr500" deviceset="AK500/2" device="" value="1"/>
+<part name="VOUT" library="con-ptr500" deviceset="AK500/2" device="" value="2"/>
 <part name="+5V" library="con-ptr500" deviceset="AK500/2" device="" value="3"/>
 <part name="FRAME1" library="frames" deviceset="A4L-LOC" device="" value="1"/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
@@ -509,11 +509,11 @@ DIN A4, landscape with location and doc. field</description>
 <text x="217.17" y="20.32" size="2.54" layer="94" font="vector">Azisi</text>
 </plain>
 <instances>
-<instance part="U$1" gate="G$1" x="83.82" y="110.49"/>
-<instance part="PWR_IN" gate="-1" x="22.86" y="142.24"/>
-<instance part="PWR_IN" gate="-2" x="22.86" y="137.16"/>
-<instance part="+12V" gate="-1" x="149.86" y="139.7" rot="R180"/>
-<instance part="+12V" gate="-2" x="149.86" y="144.78" rot="R180"/>
+<instance part="LM2596" gate="G$1" x="83.82" y="110.49"/>
+<instance part="VIN" gate="-1" x="22.86" y="142.24"/>
+<instance part="VIN" gate="-2" x="22.86" y="137.16"/>
+<instance part="VOUT" gate="-1" x="149.86" y="139.7" rot="R180"/>
+<instance part="VOUT" gate="-2" x="149.86" y="144.78" rot="R180"/>
 <instance part="+5V" gate="-1" x="149.86" y="123.19" rot="R180"/>
 <instance part="+5V" gate="-2" x="149.86" y="128.27" rot="R180"/>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
@@ -532,19 +532,19 @@ DIN A4, landscape with location and doc. field</description>
 <busses>
 </busses>
 <nets>
-<net name="+12V" class="0">
+<net name="VIN" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VIN+"/>
+<pinref part="LM2596" gate="G$1" pin="VIN+"/>
 <wire x1="63.5" y1="115.57" x2="59.69" y2="115.57" width="0.1524" layer="91"/>
 <label x="57.15" y="115.57" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="+12V" gate="-2" pin="KL"/>
+<pinref part="VOUT" gate="-2" pin="KL"/>
 <wire x1="144.78" y1="144.78" x2="140.97" y2="144.78" width="0.1524" layer="91"/>
 <label x="139.7" y="144.78" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="PWR_IN" gate="-1" pin="KL"/>
+<pinref part="VIN" gate="-1" pin="KL"/>
 <wire x1="27.94" y1="142.24" x2="31.75" y2="142.24" width="0.1524" layer="91"/>
 <wire x1="31.75" y1="142.24" x2="31.75" y2="144.78" width="0.1524" layer="91"/>
 <wire x1="31.75" y1="144.78" x2="45.72" y2="144.78" width="0.1524" layer="91"/>
@@ -553,7 +553,7 @@ DIN A4, landscape with location and doc. field</description>
 </net>
 <net name="+5V" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="VOUT+"/>
+<pinref part="LM2596" gate="G$1" pin="VOUT+"/>
 <wire x1="104.14" y1="115.57" x2="107.95" y2="115.57" width="0.1524" layer="91"/>
 <label x="105.41" y="115.57" size="1.778" layer="95"/>
 </segment>
@@ -580,7 +580,7 @@ DIN A4, landscape with location and doc. field</description>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="PWR_IN" gate="-2" pin="KL"/>
+<pinref part="VIN" gate="-2" pin="KL"/>
 <wire x1="27.94" y1="137.16" x2="31.75" y2="137.16" width="0.1524" layer="91"/>
 <wire x1="31.75" y1="137.16" x2="31.75" y2="134.62" width="0.1524" layer="91"/>
 <wire x1="31.75" y1="134.62" x2="45.72" y2="134.62" width="0.1524" layer="91"/>
@@ -588,19 +588,19 @@ DIN A4, landscape with location and doc. field</description>
 <wire x1="45.72" y1="134.62" x2="45.72" y2="132.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VIN-"/>
+<pinref part="LM2596" gate="G$1" pin="VIN-"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="63.5" y1="105.41" x2="55.88" y2="105.41" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="105.41" x2="55.88" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VOUT-"/>
+<pinref part="LM2596" gate="G$1" pin="VOUT-"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="104.14" y1="105.41" x2="111.76" y2="105.41" width="0.1524" layer="91"/>
 <wire x1="111.76" y1="105.41" x2="111.76" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="+12V" gate="-1" pin="KL"/>
+<pinref part="VOUT" gate="-1" pin="KL"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <wire x1="144.78" y1="139.7" x2="135.89" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="135.89" y1="139.7" x2="135.89" y2="138.43" width="0.1524" layer="91"/>
