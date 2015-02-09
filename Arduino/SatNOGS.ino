@@ -37,7 +37,7 @@ void setup()
   AZstepper.setAcceleration(200);
   
   /*Change these to suit your stepper if you want*/
-  ELstepper.setMaxSpeed(400);
+  ELstepper.setMaxSpeed(200);
   ELstepper.setAcceleration(200);
   
   /*Enable Motors*/
@@ -60,7 +60,6 @@ void loop()
   /*Define the steps*/
   static int AZstep = 0;
   static int ELstep = 0;
-  
   /*Time Check*/
   if (t_DIS == 0)
     t_DIS = millis();
@@ -97,13 +96,14 @@ void Homing(int AZsteps, int ELsteps)
   {
     value_Home_AZ = digitalRead(HOME_AZ);
     value_Home_EL = digitalRead(HOME_EL);
-
-    if (value_Home_AZ == LOW)
+    /* Change to LOW according to Home sensor */
+    if (value_Home_AZ == HIGH)
     {
       AZstepper.moveTo(AZstepper.currentPosition());
       isHome_AZ = true;
     }   
-    if (value_Home_EL == LOW)
+    /* Change to LOW according to Home sensor */
+    if (value_Home_EL == HIGH)
     {
       ELstepper.moveTo(ELstepper.currentPosition());
       isHome_EL = true;
