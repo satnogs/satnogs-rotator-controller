@@ -33,12 +33,12 @@ AccelStepper ELstepper(1, STEP_EL, DIR_EL);
 void setup()
 {  
   /*Change these to suit your stepper if you want*/
-  AZstepper.setMaxSpeed(200);
-  AZstepper.setAcceleration(200);
+  AZstepper.setMaxSpeed(150);
+  AZstepper.setAcceleration(50);
   
   /*Change these to suit your stepper if you want*/
-  ELstepper.setMaxSpeed(200);
-  ELstepper.setAcceleration(200);
+  ELstepper.setMaxSpeed(150);
+  ELstepper.setAcceleration(50);
   
   /*Enable Motors*/
   pinMode(EN, OUTPUT);
