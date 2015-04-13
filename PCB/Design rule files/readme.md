@@ -1,0 +1,1 @@
+Design rules files (.dru) by manufactures can be used to check PCB against manufacturing.

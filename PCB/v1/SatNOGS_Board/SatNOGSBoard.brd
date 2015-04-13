@@ -41,7 +41,7 @@
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -147,6 +147,8 @@
 <hole x="57.15" y="2.54" drill="2.8"/>
 <text x="11.43" y="60.96" size="1.4224" layer="21" font="vector" ratio="16" rot="R180">I2C</text>
 <text x="11.43" y="41.91" size="1.4224" layer="21" font="vector" ratio="16" rot="R180">SW</text>
+<dimension x1="59.36" y1="68.57" x2="0" y2="68.58" x3="29.6802125" y3="69.84606875" textsize="1.778" layer="48" visible="yes"/>
+<dimension x1="0" y1="68.57" x2="0" y2="0" x3="-3.81" y3="34.285" textsize="1.778" layer="48" visible="yes"/>
 </plain>
 <libraries>
 <library name="Arduino_Pro_Micro">
