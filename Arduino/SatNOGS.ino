@@ -154,7 +154,7 @@ void cmd_proc(int &stepAz, int &stepEl)
   char incomingByte;
   char *p=buffer;
   char *str;
-  int counter=0;
+  static int counter=0;
   char data[100];
   
   double angleAz,angleEl;
