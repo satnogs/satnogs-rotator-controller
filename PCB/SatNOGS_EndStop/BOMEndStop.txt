@@ -1,7 +1,0 @@
-Part  Value    Device     Package  Description               
-JP2            M03PTH     1X03     Header 3                  
-LED1           LED3MM     LED3MM   LEDs                      
-OPTO1 TCST2103 TCST2103   TCST2013                           
-R1    180      R-EU_M0805 M0805    RESISTOR, European symbol 
-R2    150      R-EU_M0805 M0805    RESISTOR, European symbol 
-R3    2k2      R-EU_M0805 M0805    RESISTOR, European symbol 

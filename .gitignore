@@ -4,6 +4,8 @@
 *.s#?
 *.b#?
 *.l#?
+*.bak
+*.kicad_pcb-bak
 
 # Eagle project file
 # It contains a serial number and references to the file structure
@@ -34,3 +36,6 @@ eagle.epf
 #*.info
 
 #*.eps
+
+# datasheet file
+

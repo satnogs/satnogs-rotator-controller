@@ -1,6 +1,0 @@
-Part   Value                          Device                         Package         Description                                             
-+5V    3                              AK500/2                        AK500/2         CONNECTOR                                               
-LM2596 LM2596-BREAKOUTLM2596-BREAKOUT LM2596-BREAKOUTLM2596-BREAKOUT LM2596-BREAKOUT Break out for LM2596 Switching power supply (regulated) 
-VIN    1                              AK500/2                        AK500/2         CONNECTOR                                               
-VOUT   2                              AK500/2                        AK500/2         CONNECTOR                                               
-X4     USB_3PSHIELD-85-32003-00X-1    USB_3PSHIELD-85-32003-00X-1    85-32003-00X-1  Triple USB Connector                                    
