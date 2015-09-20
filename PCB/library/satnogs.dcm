@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP TCST2103
+D Transmissive Optical Sensor with Phototransistor Output
+K Optical switch, Photo interrupter, Counter, Encoder
+$ENDCMP
+#
+#End Doc Library

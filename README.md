@@ -1,12 +1,12 @@
-# SatNOGS Arduino
+# SatNOGS Rotator Controller
 
-Repository of Arduino code and Arduino PCB for SatNOGS project.
+Firmware and electronics for SatNOGS Rotator.
 
-Refer to block diagram in the repository for wiring documentation.
+Repository includes all needed gerber files for PCB's and firmware for microcontroller.
 
-The PCB is based in [Arduino Pro Micro](https://www.sparkfun.com/products/12640) and the [Pololu stepper motor driver](http://www.pololu.com/product/1182). In the picture below you can see the PCB.
+For previous versions check branches and tags.
 
-![satnogs_PCB](https://raw.github.com/satnogs/satnogs-arduino/master/Pics/SatNOGS_Board.png)
+More information can be found in our documentation.
 
 ## License
 

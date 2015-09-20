@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_Encoder/SatNOGS_Encoder.sch</source>
+    <date>Κυρ 20 Σεπ 2015 08:15:01 πμ EDT</date>
+    <tool>Eeschema 0.201509161501+6201~30~ubuntu14.04.1-product</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>SatNOGS_Encoder.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="U1">
+      <value>AS5040</value>
+      <footprint>Housings_SSOP:SSOP-16_5.3x6.2mm_Pitch0.65mm</footprint>
+      <libsource lib="satnogs" part="AS5040"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FACFC8</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>560</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FADD67</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>560</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FAE1DA</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>100</value>
+      <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <libsource lib="device" part="R"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FAED06</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>1n</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FAED95</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>100n</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FB7E85</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FB84C5</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <libsource lib="device" part="C"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FB8594</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>CONN_02X07</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_2x07</footprint>
+      <libsource lib="conn" part="CONN_02X07"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FBB05D</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FCA0B4</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="device" part="LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>55FCA19F</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="conn" part="CONN_02X07">
+      <footprints>
+        <fp>Pin_Header_Straight_2X07</fp>
+        <fp>Pin_Header_Angled_2X07</fp>
+        <fp>Socket_Strip_Straight_2X07</fp>
+        <fp>Socket_Strip_Angled_2X07</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_02X07</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+        <pin num="8" name="P8" type="passive"/>
+        <pin num="9" name="P9" type="passive"/>
+        <pin num="10" name="P10" type="passive"/>
+        <pin num="11" name="P11" type="passive"/>
+        <pin num="12" name="P12" type="passive"/>
+        <pin num="13" name="P13" type="passive"/>
+        <pin num="14" name="P14" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="satnogs" part="AS5040">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AS5040</field>
+      </fields>
+      <pins>
+        <pin num="1" name="MagINCn" type="output"/>
+        <pin num="2" name="MagDECn" type="output"/>
+        <pin num="3" name="A_LSB_U" type="input"/>
+        <pin num="4" name="B_DIR_V" type="input"/>
+        <pin num="5" name="NC" type="NotConnected"/>
+        <pin num="6" name="Index_W" type="input"/>
+        <pin num="7" name="VSS" type="power_in"/>
+        <pin num="8" name="Prog" type="input"/>
+        <pin num="9" name="DO" type="output"/>
+        <pin num="10" name="CLK" type="input"/>
+        <pin num="11" name="CSn" type="input"/>
+        <pin num="12" name="PWM_LSB" type="output"/>
+        <pin num="13" name="NC" type="NotConnected"/>
+        <pin num="14" name="NC" type="NotConnected"/>
+        <pin num="15" name="VDD3V3" type="power_out"/>
+        <pin num="16" name="VDD5V" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="C">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="LED">
+      <footprints>
+        <fp>LED-3MM</fp>
+        <fp>LED-5MM</fp>
+        <fp>LED-10MM</fp>
+        <fp>LED-0603</fp>
+        <fp>LED-0805</fp>
+        <fp>LED-1206</fp>
+        <fp>LEDV</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>/usr/share/kicad/library/conn.lib</uri>
+    </library>
+    <library logical="satnogs">
+      <uri>/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/MagINCn">
+      <node ref="U1" pin="1"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="2" name="/PWM">
+      <node ref="P1" pin="4"/>
+      <node ref="P1" pin="3"/>
+      <node ref="U1" pin="12"/>
+    </net>
+    <net code="3" name="/Prog">
+      <node ref="R3" pin="2"/>
+      <node ref="C1" pin="2"/>
+      <node ref="U1" pin="8"/>
+    </net>
+    <net code="4" name="/CS">
+      <node ref="U1" pin="11"/>
+      <node ref="P1" pin="5"/>
+      <node ref="P1" pin="6"/>
+    </net>
+    <net code="5" name="/DO">
+      <node ref="U1" pin="9"/>
+      <node ref="P1" pin="10"/>
+      <node ref="P1" pin="9"/>
+    </net>
+    <net code="6" name="/CLK">
+      <node ref="U1" pin="10"/>
+      <node ref="P1" pin="8"/>
+      <node ref="P1" pin="7"/>
+    </net>
+    <net code="7" name="GND">
+      <node ref="C1" pin="1"/>
+      <node ref="U1" pin="7"/>
+      <node ref="C4" pin="2"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C3" pin="2"/>
+      <node ref="P1" pin="14"/>
+      <node ref="P1" pin="13"/>
+    </net>
+    <net code="8" name="+5V">
+      <node ref="D1" pin="2"/>
+      <node ref="U1" pin="16"/>
+      <node ref="D2" pin="2"/>
+      <node ref="P1" pin="1"/>
+      <node ref="P1" pin="2"/>
+      <node ref="C4" pin="1"/>
+    </net>
+    <net code="9" name="Net-(U1-Pad4)">
+      <node ref="U1" pin="4"/>
+    </net>
+    <net code="10" name="Net-(D1-Pad1)">
+      <node ref="D1" pin="1"/>
+      <node ref="R1" pin="1"/>
+    </net>
+    <net code="11" name="/DI">
+      <node ref="R3" pin="1"/>
+      <node ref="P1" pin="12"/>
+      <node ref="P1" pin="11"/>
+    </net>
+    <net code="12" name="Net-(D2-Pad1)">
+      <node ref="D2" pin="1"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="13" name="Net-(U1-Pad3)">
+      <node ref="U1" pin="3"/>
+    </net>
+    <net code="14" name="Net-(U1-Pad6)">
+      <node ref="U1" pin="6"/>
+    </net>
+    <net code="15" name="/MagDECn">
+      <node ref="U1" pin="2"/>
+      <node ref="R2" pin="2"/>
+    </net>
+    <net code="16" name="Net-(U1-Pad5)">
+      <node ref="U1" pin="5"/>
+    </net>
+    <net code="17" name="Net-(U1-Pad13)">
+      <node ref="U1" pin="13"/>
+    </net>
+    <net code="18" name="Net-(U1-Pad14)">
+      <node ref="U1" pin="14"/>
+    </net>
+    <net code="19" name="Net-(C2-Pad1)">
+      <node ref="C3" pin="1"/>
+      <node ref="U1" pin="15"/>
+      <node ref="C2" pin="1"/>
+    </net>
+  </nets>
+</export>

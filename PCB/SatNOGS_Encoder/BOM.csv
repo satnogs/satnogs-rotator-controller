@@ -1,0 +1,12 @@
+Reference, Value, Footprint, Datasheet
+U1,AS5040,Housings_SSOP:SSOP-16_5.3x6.2mm_Pitch0.65mm,
+R2,560,Resistors_SMD:R_0805_HandSoldering,
+R1,560,Resistors_SMD:R_0805_HandSoldering,
+R3,100,Resistors_SMD:R_0805_HandSoldering,
+C1,1n,Capacitors_SMD:C_0805_HandSoldering,
+C4,100n,Capacitors_SMD:C_0805_HandSoldering,
+C2,1u,Capacitors_SMD:C_0805_HandSoldering,
+C3,1u,Capacitors_SMD:C_0805_HandSoldering,
+P1,CONN_02X07,Pin_Headers:Pin_Header_Straight_2x07,
+D1,LED,LEDs:LED-3MM,
+D2,LED,LEDs:LED-3MM,

@@ -1,0 +1,7 @@
+Reference, Value, Footprint, Datasheet
+U1,TCST2103,library:TCST2103,
+R1,180,Resistors_SMD:R_0805_HandSoldering,
+R2,1k5,Resistors_SMD:R_0805_HandSoldering,
+R3,1k,Resistors_SMD:R_0805_HandSoldering,
+D1,LED,LEDs:LED-3MM,
+P1,CONN_01X03,Pin_Headers:Pin_Header_Angled_1x03,
