@@ -1,0 +1,115 @@
+Cmp-Mod V01 Created by Cvpcb (after 2015-mar-04 BZR unknown)-product   date = Tue 29 Dec 2015 05:38:50 PM EET
+
+BeginCmp
+TimeStamp = /56816138;
+Reference = C1;
+ValeurCmp = 100u;
+IdModule  = Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /568151CC;
+Reference = C2;
+ValeurCmp = 100u;
+IdModule  = Capacitors_ThroughHole:C_Radial_D6.3_L11.2_P2.5;
+EndCmp
+
+BeginCmp
+TimeStamp = /5681614E;
+Reference = JP1;
+ValeurCmp = Jumper_NO_Small;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /56816147;
+Reference = JP2;
+ValeurCmp = Jumper_NO_Small;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /56816155;
+Reference = JP3;
+ValeurCmp = Jumper_NO_Small;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /5682CC78;
+Reference = JP4;
+ValeurCmp = Jumper_NO_Small;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /5682CC72;
+Reference = JP5;
+ValeurCmp = Jumper_NO_Small;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /5682CC7E;
+Reference = JP6;
+ValeurCmp = Jumper_NO_Small;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02;
+EndCmp
+
+BeginCmp
+TimeStamp = /5681386B;
+Reference = P1;
+ValeurCmp = CONN_01X18;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x18;
+EndCmp
+
+BeginCmp
+TimeStamp = /56813BD5;
+Reference = P2;
+ValeurCmp = CONN_01X02;
+IdModule  = Connect:bornier2;
+EndCmp
+
+BeginCmp
+TimeStamp = /56813E91;
+Reference = P3;
+ValeurCmp = MOTOR 1;
+IdModule  = Connect:bornier4;
+EndCmp
+
+BeginCmp
+TimeStamp = /56813D7C;
+Reference = P4;
+ValeurCmp = MOTOR 2;
+IdModule  = Connect:bornier4;
+EndCmp
+
+BeginCmp
+TimeStamp = /5681612B;
+Reference = R1;
+ValeurCmp = 100k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /56814F5D;
+Reference = R2;
+ValeurCmp = 100k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /568160FF;
+Reference = U1;
+ValeurCmp = POLOLU_A4988;
+IdModule  = satnogs:SWDIP8_.6W;
+EndCmp
+
+BeginCmp
+TimeStamp = /568135F1;
+Reference = U2;
+ValeurCmp = POLOLU_A4988;
+IdModule  = satnogs:SWDIP8_.6W;
+EndCmp
+
+EndListe
