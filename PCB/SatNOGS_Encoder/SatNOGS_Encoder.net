@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source /home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/mydev/kicad/SatNOGS_Encoder/SatNOGS_Encoder.sch)
-    (date "Κυρ 20 Σεπ 2015 07:27:00 πμ EDT")
-    (tool "Eeschema 0.201509161501+6201~30~ubuntu14.04.1-product")
+    (source /home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_Encoder/SatNOGS_Encoder.sch)
+    (date "Sat 02 Jan 2016 07:16:07 PM EET")
+    (tool "Eeschema (after 2015-mar-04 BZR unknown)-product")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -82,27 +82,6 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 55FCA19F)))
   (libparts
-    (libpart (lib satnogs) (part AS5040)
-      (fields
-        (field (name Reference) U)
-        (field (name Value) AS5040))
-      (pins
-        (pin (num 1) (name MagINCn) (type output))
-        (pin (num 2) (name MagDECn) (type output))
-        (pin (num 3) (name A_LSB_U) (type input))
-        (pin (num 4) (name B_DIR_V) (type input))
-        (pin (num 5) (name NC) (type NotConnected))
-        (pin (num 6) (name Index_W) (type input))
-        (pin (num 7) (name VSS) (type power_in))
-        (pin (num 8) (name Prog) (type input))
-        (pin (num 9) (name DO) (type output))
-        (pin (num 10) (name CLK) (type input))
-        (pin (num 11) (name CSn) (type input))
-        (pin (num 12) (name PWM_LSB) (type output))
-        (pin (num 13) (name NC) (type NotConnected))
-        (pin (num 14) (name NC) (type NotConnected))
-        (pin (num 15) (name VDD3V3) (type power_out))
-        (pin (num 16) (name VDD5V) (type power_in))))
     (libpart (lib device) (part LED)
       (footprints
         (fp LED-3MM)
@@ -116,8 +95,19 @@
         (field (name Reference) D)
         (field (name Value) LED))
       (pins
-        (pin (num 1) (name K) (type passive))
-        (pin (num 2) (name A) (type passive))))
+        (pin (num 1) (name A) (type passive))
+        (pin (num 2) (name K) (type passive))))
+    (libpart (lib device) (part R)
+      (description Resistor)
+      (footprints
+        (fp R_*)
+        (fp Resistor_*))
+      (fields
+        (field (name Reference) R)
+        (field (name Value) R))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
     (libpart (lib device) (part C)
       (description "Unpolarized capacitor")
       (footprints
@@ -129,17 +119,6 @@
       (fields
         (field (name Reference) C)
         (field (name Value) C))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part R)
-      (description Resistor)
-      (footprints
-        (fp R_*)
-        (fp Resistor_*))
-      (fields
-        (field (name Reference) R)
-        (field (name Value) R))
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
@@ -166,14 +145,35 @@
         (pin (num 11) (name P11) (type passive))
         (pin (num 12) (name P12) (type passive))
         (pin (num 13) (name P13) (type passive))
-        (pin (num 14) (name P14) (type passive)))))
+        (pin (num 14) (name P14) (type passive))))
+    (libpart (lib satnogs) (part AS5040)
+      (fields
+        (field (name Reference) U)
+        (field (name Value) AS5040))
+      (pins
+        (pin (num 1) (name MagINCn) (type output))
+        (pin (num 2) (name MagDECn) (type output))
+        (pin (num 3) (name A_LSB_U) (type input))
+        (pin (num 4) (name B_DIR_V) (type input))
+        (pin (num 5) (name NC) (type NotConnected))
+        (pin (num 6) (name Index_W) (type input))
+        (pin (num 7) (name VSS) (type power_in))
+        (pin (num 8) (name Prog) (type input))
+        (pin (num 9) (name DO) (type output))
+        (pin (num 10) (name CLK) (type input))
+        (pin (num 11) (name CSn) (type input))
+        (pin (num 12) (name PWM_LSB) (type output))
+        (pin (num 13) (name NC) (type NotConnected))
+        (pin (num 14) (name NC) (type NotConnected))
+        (pin (num 15) (name VDD3V3) (type power_out))
+        (pin (num 16) (name VDD5V) (type power_in)))))
   (libraries
-    (library (logical satnogs)
-      (uri /home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/mydev/kicad/library/satnogs.lib))
+    (library (logical device)
+      (uri /usr/share/kicad/library/device.lib))
     (library (logical conn)
       (uri /usr/share/kicad/library/conn.lib))
-    (library (logical device)
-      (uri /usr/share/kicad/library/device.lib)))
+    (library (logical satnogs)
+      (uri /home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib)))
   (nets
     (net (code 1) (name /MagINCn)
       (node (ref U1) (pin 1))

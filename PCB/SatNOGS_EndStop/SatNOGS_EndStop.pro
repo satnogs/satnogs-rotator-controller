@@ -1,4 +1,4 @@
-update=Πεμ 17 Σεπ 2015 05:33:05 μμ EEST
+update=Mon 28 Dec 2015 07:05:32 PM EET
 version=1
 last_client=kicad
 [pcbnew]
@@ -59,4 +59,3 @@ LibName27=atmel
 LibName28=contrib
 LibName29=valves
 LibName30=satnogs
-LibName31=/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/mydev/kicad/library/satnogs

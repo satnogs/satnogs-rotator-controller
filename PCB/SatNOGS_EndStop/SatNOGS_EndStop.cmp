@@ -1,0 +1,45 @@
+Cmp-Mod V01 Created by Cvpcb (after 2015-mar-04 BZR unknown)-product   date = Sat 02 Jan 2016 07:36:01 PM EET
+
+BeginCmp
+TimeStamp = /55BCD94A;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LEDs:LED-3MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE41ED;
+Reference = P1;
+ValeurCmp = CONN_01X03;
+IdModule  = Pin_Headers:Pin_Header_Angled_1x03;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BCD813;
+Reference = R1;
+ValeurCmp = 180;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BCD89E;
+Reference = R2;
+ValeurCmp = 1k5;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BCD8ED;
+Reference = R3;
+ValeurCmp = 1k;
+IdModule  = Resistors_SMD:R_0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BCD149;
+Reference = U1;
+ValeurCmp = TCST2103;
+IdModule  = satnogs:TCST2103;
+EndCmp
+
+EndListe
