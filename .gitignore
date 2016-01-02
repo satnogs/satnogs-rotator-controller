@@ -3,7 +3,6 @@
 *.b#?
 *.l#?
 *.bak
+*.bck
 *.kicad_pcb-bak
-
-# datasheet file
-/PCB/library/datasheet
+*.fcstd1
