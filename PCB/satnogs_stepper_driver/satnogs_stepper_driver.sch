@@ -747,4 +747,12 @@ Wire Notes Line
 	7850 5375 4825 5375
 Wire Notes Line
 	4825 5375 4825 3675
+Text Label 2780 1530 0    60   ~ 0
+ControllerHeader
+Text Label 4830 1480 0    60   ~ 0
+Motor1
+Text Label 4830 3680 0    60   ~ 0
+Motor2
+Text Label 3350 4020 0    60   ~ 0
+PowerIn
 $EndSCHEMATC
