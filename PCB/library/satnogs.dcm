@@ -1,5 +1,19 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP MAX485
+D RS422/RS485 Transceiver
+$ENDCMP
+#
+$CMP Pro_Micro
+D Sparkfun Pro Micro
+K Arduino Compatible
+$ENDCMP
+#
+$CMP SW_PUSH
+D Push Button
+K Switch
+$ENDCMP
+#
 $CMP TCST2103
 D Transmissive Optical Sensor with Phototransistor Output
 K Optical switch, Photo interrupter, Counter, Encoder
