@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_EndStop/SatNOGS_EndStop.sch</source>
-    <date>Κυρ 20 Σεπ 2015 08:17:39 πμ EDT</date>
-    <tool>Eeschema 0.201509161501+6201~30~ubuntu14.04.1-product</tool>
+    <source>/home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_EndStop/SatNOGS_EndStop.sch</source>
+    <date>Wed 17 Feb 2016 18:55:33 EET</date>
+    <tool>Eeschema 4.0.1-stable</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -21,7 +21,15 @@
   <components>
     <comp ref="U1">
       <value>TCST2103</value>
-      <footprint>library:TCST2103</footprint>
+      <footprint>satnogs:TCST2103</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/tcst2103-279826.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 782-TCST2103 </field>
+        <field name="Manufacturer">TCST2103</field>
+        <field name="Package">-</field>
+        <field name="Notes">-</field>
+        <field name="Price">1.59€</field>
+      </fields>
       <libsource lib="satnogs" part="TCST2103"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BCD149</tstamp>
@@ -29,6 +37,14 @@
     <comp ref="R1">
       <value>180</value>
       <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 71-CRCW0805180RJNEA </field>
+        <field name="Manufacturer">CRCW0805180RJNEA</field>
+        <field name="Package">0805</field>
+        <field name="Notes">1/8W 5%</field>
+        <field name="Price">0.091 €</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BCD813</tstamp>
@@ -36,6 +52,14 @@
     <comp ref="R2">
       <value>1k5</value>
       <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 71-CRCW0805J-1.5K-E3</field>
+        <field name="Manufacturer">CRCW08051K50JNEA</field>
+        <field name="Package">0805</field>
+        <field name="Notes">1/8W 5%</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BCD89E</tstamp>
@@ -43,6 +67,14 @@
     <comp ref="R3">
       <value>1k</value>
       <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 71-CRCW08051K00JNEB </field>
+        <field name="Manufacturer">CRCW08051K00JNEB</field>
+        <field name="Package">0805</field>
+        <field name="Notes">1/8W 5%</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BCD8ED</tstamp>
@@ -50,6 +82,14 @@
     <comp ref="D1">
       <value>LED</value>
       <footprint>LEDs:LED-3MM</footprint>
+      <datasheet>https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf</datasheet>
+      <fields>
+        <field name="Distributor">SparkFun COM-09650</field>
+        <field name="Manufacturer">-</field>
+        <field name="Package">Green 3mm pitch 2.54</field>
+        <field name="Notes">-</field>
+        <field name="Price">0.33€</field>
+      </fields>
       <libsource lib="device" part="LED"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BCD94A</tstamp>
@@ -57,6 +97,14 @@
     <comp ref="P1">
       <value>CONN_01X03</value>
       <footprint>Pin_Headers:Pin_Header_Angled_1x03</footprint>
+      <datasheet>-</datasheet>
+      <fields>
+        <field name="Distributor">SparkFun PRT-00553</field>
+        <field name="Manufacturer">-</field>
+        <field name="Package">1x40 pin right-angle pitch 2.54</field>
+        <field name="Notes">-</field>
+        <field name="Price">1.85€</field>
+      </fields>
       <libsource lib="conn" part="CONN_01X03"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BE41ED</tstamp>
@@ -64,6 +112,7 @@
   </components>
   <libparts>
     <libpart lib="conn" part="CONN_01X03">
+      <description>Connector 01x03</description>
       <footprints>
         <fp>Pin_Header_Straight_1X03</fp>
         <fp>Pin_Header_Angled_1X03</fp>
@@ -78,34 +127,6 @@
         <pin num="1" name="P1" type="passive"/>
         <pin num="2" name="P2" type="passive"/>
         <pin num="3" name="P3" type="passive"/>
-      </pins>
-    </libpart>
-    <libpart lib="satnogs" part="TCST2103">
-      <description>Transmissive Optical Sensor with Phototransistor Output</description>
-      <fields>
-        <field name="Reference">U</field>
-        <field name="Value">TCST2103</field>
-      </fields>
-      <pins>
-        <pin num="1" name="+" type="input"/>
-        <pin num="2" name="E" type="input"/>
-        <pin num="3" name="+" type="input"/>
-        <pin num="4" name="D" type="input"/>
-      </pins>
-    </libpart>
-    <libpart lib="device" part="R">
-      <description>Resistor</description>
-      <footprints>
-        <fp>R_*</fp>
-        <fp>Resistor_*</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">R</field>
-        <field name="Value">R</field>
-      </fields>
-      <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="device" part="LED">
@@ -127,16 +148,44 @@
         <pin num="2" name="A" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="satnogs" part="TCST2103">
+      <description>Transmissive Optical Sensor with Phototransistor Output</description>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TCST2103</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="input"/>
+        <pin num="2" name="E" type="input"/>
+        <pin num="3" name="+" type="input"/>
+        <pin num="4" name="D" type="input"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
-    <library logical="device">
-      <uri>/usr/share/kicad/library/device.lib</uri>
-    </library>
     <library logical="conn">
       <uri>/usr/share/kicad/library/conn.lib</uri>
     </library>
     <library logical="satnogs">
-      <uri>/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib</uri>
+      <uri>/home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>/usr/share/kicad/library/device.lib</uri>
     </library>
   </libraries>
   <nets>

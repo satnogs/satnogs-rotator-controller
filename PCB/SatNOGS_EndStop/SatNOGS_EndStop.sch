@@ -51,7 +51,12 @@ P 4700 2950
 F 0 "U1" H 4950 2650 60  0000 C BNN
 F 1 "TCST2103" H 4700 3250 60  0000 C TNN
 F 2 "satnogs:TCST2103" H 4700 2950 60  0001 C CNN
-F 3 "" H 4700 2950 60  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/tcst2103-279826.pdf" H 4700 2950 60  0001 C CNN
+F 4 "Mouser 782-TCST2103 " H 4700 2950 60  0001 C CNN "Distributor"
+F 5 "TCST2103" H 4700 2950 60  0001 C CNN "Manufacturer"
+F 6 "-" H 4700 2950 60  0001 C CNN "Package"
+F 7 "-" H 4700 2950 60  0001 C CNN "Notes"
+F 8 "1.59€" H 4700 2950 60  0001 C CNN "Price"
 	1    4700 2950
 	1    0    0    -1  
 $EndComp
@@ -62,7 +67,12 @@ P 4100 2450
 F 0 "R1" V 4180 2450 50  0000 C CNN
 F 1 "180" V 4100 2450 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4030 2450 30  0001 C CNN
-F 3 "" H 4100 2450 30  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf" H 4100 2450 30  0001 C CNN
+F 4 "Mouser 71-CRCW0805180RJNEA " V 4100 2450 60  0001 C CNN "Distributor"
+F 5 "CRCW0805180RJNEA" V 4100 2450 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 4100 2450 60  0001 C CNN "Package"
+F 7 "1/8W 5%" V 4100 2450 60  0001 C CNN "Notes"
+F 8 "0.091 €" V 4100 2450 60  0001 C CNN "Price"
 	1    4100 2450
 	1    0    0    -1  
 $EndComp
@@ -73,7 +83,12 @@ P 5650 2450
 F 0 "R2" V 5730 2450 50  0000 C CNN
 F 1 "1k5" V 5650 2450 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 5580 2450 30  0001 C CNN
-F 3 "" H 5650 2450 30  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf" H 5650 2450 30  0001 C CNN
+F 4 "Mouser 71-CRCW0805J-1.5K-E3" V 5650 2450 60  0001 C CNN "Distributor"
+F 5 "CRCW08051K50JNEA" V 5650 2450 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 5650 2450 60  0001 C CNN "Package"
+F 7 "1/8W 5%" V 5650 2450 60  0001 C CNN "Notes"
+F 8 "0.091€" V 5650 2450 60  0001 C CNN "Price"
 	1    5650 2450
 	1    0    0    -1  
 $EndComp
@@ -84,7 +99,12 @@ P 5650 3800
 F 0 "R3" V 5730 3800 50  0000 C CNN
 F 1 "1k" V 5650 3800 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 5580 3800 30  0001 C CNN
-F 3 "" H 5650 3800 30  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf" H 5650 3800 30  0001 C CNN
+F 4 "Mouser 71-CRCW08051K00JNEB " V 5650 3800 60  0001 C CNN "Distributor"
+F 5 "CRCW08051K00JNEB" V 5650 3800 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 5650 3800 60  0001 C CNN "Package"
+F 7 "1/8W 5%" V 5650 3800 60  0001 C CNN "Notes"
+F 8 "0.091€" V 5650 3800 60  0001 C CNN "Price"
 	1    5650 3800
 	1    0    0    -1  
 $EndComp
@@ -95,7 +115,12 @@ P 5650 3350
 F 0 "D1" H 5650 3450 50  0000 C CNN
 F 1 "LED" H 5650 3250 50  0000 C CNN
 F 2 "LEDs:LED-3MM" H 5650 3350 60  0001 C CNN
-F 3 "" H 5650 3350 60  0000 C CNN
+F 3 "https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf" H 5650 3350 60  0001 C CNN
+F 4 "SparkFun COM-09650" H 5650 3350 60  0001 C CNN "Distributor"
+F 5 "-" H 5650 3350 60  0001 C CNN "Manufacturer"
+F 6 "Green 3mm pitch 2.54" H 5650 3350 60  0001 C CNN "Package"
+F 7 "-" H 5650 3350 60  0001 C CNN "Notes"
+F 8 "0.33€" H 5650 3350 60  0001 C CNN "Price"
 	1    5650 3350
 	0    -1   -1   0   
 $EndComp
@@ -106,7 +131,12 @@ P 7225 3000
 F 0 "P1" H 7225 3200 50  0000 C CNN
 F 1 "CONN_01X03" V 7325 3000 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x03" H 7225 3000 60  0001 C CNN
-F 3 "" H 7225 3000 60  0000 C CNN
+F 3 "-" H 7225 3000 60  0001 C CNN
+F 4 "SparkFun PRT-00553" H 7225 3000 60  0001 C CNN "Distributor"
+F 5 "-" H 7225 3000 60  0001 C CNN "Manufacturer"
+F 6 "1x40 pin right-angle pitch 2.54" H 7225 3000 60  0001 C CNN "Package"
+F 7 "-" H 7225 3000 60  0001 C CNN "Notes"
+F 8 "1.85€" H 7225 3000 60  0001 C CNN "Price"
 	1    7225 3000
 	1    0    0    -1  
 $EndComp
