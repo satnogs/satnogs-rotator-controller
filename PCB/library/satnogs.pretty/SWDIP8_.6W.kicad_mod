@@ -25,9 +25,9 @@
   (pad 14 thru_hole circle (at -3.81 -6.35) (size 1.524 1.524) (drill 0.8128) (layers *.Cu *.Mask F.SilkS))
   (pad 15 thru_hole circle (at -6.35 -6.35) (size 1.524 1.524) (drill 0.8128) (layers *.Cu *.Mask F.SilkS))
   (pad 16 thru_hole circle (at -8.89 -6.35) (size 1.524 1.524) (drill 0.8128) (layers *.Cu *.Mask F.SilkS))
-  (model ../../../../../home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.3dshapes/Pololu_A4988.x3d
-    (at (xyz 0 0 0.1))
-    (scale (xyz 0.3937 0.3937 0.3937))
-    (rotate (xyz 0 0 0))
+  (model ../../../../../home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.3dshapes/Pololu_A4988_Headers.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 0))
   )
 )

@@ -33,9 +33,9 @@
   (pad 22 thru_hole circle (at -7.62 -7.62) (size 1.8 1.8) (drill 1) (layers *.Cu *.Mask F.SilkS))
   (pad 23 thru_hole circle (at -10.16 -7.62) (size 1.8 1.8) (drill 1) (layers *.Cu *.Mask F.SilkS))
   (pad 24 thru_hole circle (at -12.7 -7.62) (size 1.8 1.8) (drill 1) (layers *.Cu *.Mask F.SilkS))
-  (model ../../../../../home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.3dshapes/ProMicro.x3d
-    (at (xyz 0 0 0.1))
-    (scale (xyz 0.3937 0.3937 0.3937))
-    (rotate (xyz -90 0 180))
+  (model ../../../../../home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.3dshapes/ProMicro_Headers.wrl
+    (at (xyz 0.05 0.3 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz -90 0 0))
   )
 )

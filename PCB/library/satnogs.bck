@@ -9,6 +9,11 @@ D Sparkfun Pro Micro
 K Arduino Compatible
 $ENDCMP
 #
+$CMP SW_PUSH
+D Push Button
+K Switch
+$ENDCMP
+#
 $CMP TCST2103
 D Transmissive Optical Sensor with Phototransistor Output
 K Optical switch, Photo interrupter, Counter, Encoder
