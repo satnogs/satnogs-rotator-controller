@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="D">
   <design>
-    <source>/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_Encoder/SatNOGS_Encoder.sch</source>
-    <date>Κυρ 20 Σεπ 2015 08:15:01 πμ EDT</date>
-    <tool>Eeschema 0.201509161501+6201~30~ubuntu14.04.1-product</tool>
+    <source>/home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_Encoder/encoder_as5040/encoder_as5040.sch</source>
+    <date>Wed 17 Feb 2016 18:09:40 EET</date>
+    <tool>Eeschema 4.0.1-stable</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
         <company/>
         <rev/>
         <date/>
-        <source>SatNOGS_Encoder.sch</source>
+        <source>encoder_as5040.sch</source>
         <comment number="1" value=""/>
         <comment number="2" value=""/>
         <comment number="3" value=""/>
@@ -22,6 +22,14 @@
     <comp ref="U1">
       <value>AS5040</value>
       <footprint>Housings_SSOP:SSOP-16_5.3x6.2mm_Pitch0.65mm</footprint>
+      <datasheet>http://www.mouser.com/ds/2/588/AS5040_Datasheet_EN_v2-473299.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 985-AS5040-ASST </field>
+        <field name="Manufacturer">AS5040-ASST</field>
+        <field name="Package">SSOP-16</field>
+        <field name="Notes">-</field>
+        <field name="Price">8.73 €</field>
+      </fields>
       <libsource lib="satnogs" part="AS5040"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FACFC8</tstamp>
@@ -29,6 +37,14 @@
     <comp ref="R2">
       <value>560</value>
       <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 71-CRCW0805560RJNEA </field>
+        <field name="Manufacturer">CRCW0805560RJNEA</field>
+        <field name="Package">0805</field>
+        <field name="Notes">1/8W 5%</field>
+        <field name="Price"> 0.091€</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FADD67</tstamp>
@@ -36,6 +52,14 @@
     <comp ref="R1">
       <value>560</value>
       <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 71-CRCW0805560RJNEA </field>
+        <field name="Manufacturer">CRCW0805560RJNEA</field>
+        <field name="Package">0805</field>
+        <field name="Notes">1/8W 5%</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FAE1DA</tstamp>
@@ -43,6 +67,14 @@
     <comp ref="R3">
       <value>100</value>
       <footprint>Resistors_SMD:R_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 71-CRCW0805J-100-E3 </field>
+        <field name="Manufacturer">CRCW0805100RJNEC</field>
+        <field name="Package">0805</field>
+        <field name="Notes">1/8W 5%</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="R"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FAED06</tstamp>
@@ -50,6 +82,14 @@
     <comp ref="C1">
       <value>1n</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 77-VJ0805A102KXJPBC </field>
+        <field name="Manufacturer">VJ0805A102KXJPW1BC</field>
+        <field name="Package">0805</field>
+        <field name="Notes">16VDC</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FAED95</tstamp>
@@ -57,6 +97,14 @@
     <comp ref="C4">
       <value>100n</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 77-VJ0805Y104KXJCBC </field>
+        <field name="Manufacturer">VJ0805Y104KXJCW1BC</field>
+        <field name="Package">0805</field>
+        <field name="Notes">16VDC</field>
+        <field name="Price">0.118€</field>
+      </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FB7E85</tstamp>
@@ -64,6 +112,14 @@
     <comp ref="C2">
       <value>1u</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 77-VJ0805V105ZXJCBC</field>
+        <field name="Manufacturer">VJ0805V105ZXJCW1BC</field>
+        <field name="Package">0805</field>
+        <field name="Notes">16VDC</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FB84C5</tstamp>
@@ -71,6 +127,14 @@
     <comp ref="C3">
       <value>1u</value>
       <footprint>Capacitors_SMD:C_0805_HandSoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 77-VJ0805V105ZXJCBC </field>
+        <field name="Manufacturer">VJ0805V105ZXJCW1BC</field>
+        <field name="Package">0805</field>
+        <field name="Notes">16VDC</field>
+        <field name="Price">0.091€</field>
+      </fields>
       <libsource lib="device" part="C"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FB8594</tstamp>
@@ -78,6 +142,14 @@
     <comp ref="P1">
       <value>CONN_02X07</value>
       <footprint>Pin_Headers:Pin_Header_Straight_2x07</footprint>
+      <datasheet>https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf</datasheet>
+      <fields>
+        <field name="Distributor">SparkFun COM-12792</field>
+        <field name="Manufacturer">-</field>
+        <field name="Package">2x40 pin right-angle PTH pitch 2.54</field>
+        <field name="Notes">-</field>
+        <field name="Price">1.85€</field>
+      </fields>
       <libsource lib="conn" part="CONN_02X07"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FBB05D</tstamp>
@@ -85,6 +157,14 @@
     <comp ref="D1">
       <value>LED</value>
       <footprint>LEDs:LED-3MM</footprint>
+      <datasheet>https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf</datasheet>
+      <fields>
+        <field name="Distributor">SparkFun COM-09650</field>
+        <field name="Manufacturer">-</field>
+        <field name="Package">Green 3mm pitch 2.54</field>
+        <field name="Notes">-</field>
+        <field name="Price">0.33€</field>
+      </fields>
       <libsource lib="device" part="LED"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FCA0B4</tstamp>
@@ -92,40 +172,20 @@
     <comp ref="D2">
       <value>LED</value>
       <footprint>LEDs:LED-3MM</footprint>
+      <datasheet>https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf</datasheet>
+      <fields>
+        <field name="Distributor">SparkFun COM-09650</field>
+        <field name="Manufacturer">-</field>
+        <field name="Package">Green 3mm pitch 2.54</field>
+        <field name="Notes">-</field>
+        <field name="Price">0.33€</field>
+      </fields>
       <libsource lib="device" part="LED"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55FCA19F</tstamp>
     </comp>
   </components>
   <libparts>
-    <libpart lib="conn" part="CONN_02X07">
-      <footprints>
-        <fp>Pin_Header_Straight_2X07</fp>
-        <fp>Pin_Header_Angled_2X07</fp>
-        <fp>Socket_Strip_Straight_2X07</fp>
-        <fp>Socket_Strip_Angled_2X07</fp>
-      </footprints>
-      <fields>
-        <field name="Reference">P</field>
-        <field name="Value">CONN_02X07</field>
-      </fields>
-      <pins>
-        <pin num="1" name="P1" type="passive"/>
-        <pin num="2" name="P2" type="passive"/>
-        <pin num="3" name="P3" type="passive"/>
-        <pin num="4" name="P4" type="passive"/>
-        <pin num="5" name="P5" type="passive"/>
-        <pin num="6" name="P6" type="passive"/>
-        <pin num="7" name="P7" type="passive"/>
-        <pin num="8" name="P8" type="passive"/>
-        <pin num="9" name="P9" type="passive"/>
-        <pin num="10" name="P10" type="passive"/>
-        <pin num="11" name="P11" type="passive"/>
-        <pin num="12" name="P12" type="passive"/>
-        <pin num="13" name="P13" type="passive"/>
-        <pin num="14" name="P14" type="passive"/>
-      </pins>
-    </libpart>
     <libpart lib="satnogs" part="AS5040">
       <fields>
         <field name="Reference">U</field>
@@ -168,19 +228,33 @@
         <pin num="2" name="~" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="device" part="R">
-      <description>Resistor</description>
+    <libpart lib="conn" part="CONN_02X07">
+      <description>Connector 02x07</description>
       <footprints>
-        <fp>R_*</fp>
-        <fp>Resistor_*</fp>
+        <fp>Pin_Header_Straight_2X07</fp>
+        <fp>Pin_Header_Angled_2X07</fp>
+        <fp>Socket_Strip_Straight_2X07</fp>
+        <fp>Socket_Strip_Angled_2X07</fp>
       </footprints>
       <fields>
-        <field name="Reference">R</field>
-        <field name="Value">R</field>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_02X07</field>
       </fields>
       <pins>
-        <pin num="1" name="~" type="passive"/>
-        <pin num="2" name="~" type="passive"/>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+        <pin num="8" name="P8" type="passive"/>
+        <pin num="9" name="P9" type="passive"/>
+        <pin num="10" name="P10" type="passive"/>
+        <pin num="11" name="P11" type="passive"/>
+        <pin num="12" name="P12" type="passive"/>
+        <pin num="13" name="P13" type="passive"/>
+        <pin num="14" name="P14" type="passive"/>
       </pins>
     </libpart>
     <libpart lib="device" part="LED">
@@ -202,6 +276,21 @@
         <pin num="2" name="A" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="device" part="R">
+      <description>Resistor</description>
+      <footprints>
+        <fp>R_*</fp>
+        <fp>Resistor_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
   </libparts>
   <libraries>
     <library logical="device">
@@ -211,7 +300,7 @@
       <uri>/usr/share/kicad/library/conn.lib</uri>
     </library>
     <library logical="satnogs">
-      <uri>/home/azisi/Documents/projects/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib</uri>
+      <uri>/home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib</uri>
     </library>
   </libraries>
   <nets>

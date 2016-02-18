@@ -1,0 +1,7 @@
+Reference, Value, Footprint, Datasheet , Distributor, Manufacturer, Package, Q1, Notes
+U1,AS5601,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,www.mouser.com/ds/2/588/AS5601_Datasheet-771178.pdf,
+C1,100n,Capacitors_SMD:C_0805_HandSoldering,-,
+C2,1u,Capacitors_SMD:C_0805_HandSoldering,-,
+P1,CONN_02X05,Pin_Headers:Pin_Header_Straight_2x05,https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf,
+R1,4k7,Resistors_SMD:R_0805_HandSoldering,-,
+R2,4k7,Resistors_SMD:R_0805_HandSoldering,-,

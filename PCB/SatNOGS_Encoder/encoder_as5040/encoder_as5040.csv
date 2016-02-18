@@ -1,0 +1,12 @@
+Reference, Value, Footprint, Datasheet, , Distributor, Manufacturer, Package, Notes, Price
+U1,AS5040,Housings_SSOP:SSOP-16_5.3x6.2mm_Pitch0.65mm,http://www.mouser.com/ds/2/588/AS5040_Datasheet_EN_v2-473299.pdf,,Mouser 985-AS5040-ASST ,AS5040-ASST,SSOP-16,-,8.73 €
+R2,560,Resistors_SMD:R_0805_HandSoldering,http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf,,Mouser 71-CRCW0805560RJNEA ,CRCW0805560RJNEA,805,1/8W 5%, 0.091€
+R1,560,Resistors_SMD:R_0805_HandSoldering,http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf,,Mouser 71-CRCW0805560RJNEA ,CRCW0805560RJNEA,805,1/8W 5%,0.091€
+R3,100,Resistors_SMD:R_0805_HandSoldering,http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf,,Mouser 71-CRCW0805J-100-E3 ,CRCW0805100RJNEC,805,1/8W 5%,0.091€
+C1,1n,Capacitors_SMD:C_0805_HandSoldering,http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf,,Mouser 77-VJ0805A102KXJPBC ,VJ0805A102KXJPW1BC,805,16VDC,0.091€
+C4,100n,Capacitors_SMD:C_0805_HandSoldering,http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf,,Mouser 77-VJ0805Y104KXJCBC ,VJ0805Y104KXJCW1BC,805,16VDC,0.118€
+C2,1u,Capacitors_SMD:C_0805_HandSoldering,http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf,,Mouser 77-VJ0805V105ZXJCBC,VJ0805V105ZXJCW1BC,805,16VDC,0.091€
+C3,1u,Capacitors_SMD:C_0805_HandSoldering,http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf,,Mouser 77-VJ0805V105ZXJCBC ,VJ0805V105ZXJCW1BC,805,16VDC,0.091€
+P1,CONN_02X07,Pin_Headers:Pin_Header_Straight_2x07,https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf,,SparkFun COM-12792,-,2x40 pin right-angle PTH pitch 2.54,-,1.85€
+D1,LED,LEDs:LED-3MM,https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf,,SparkFun COM-09650,-,Green 3mm pitch 2.54,-,0.33€
+D2,LED,LEDs:LED-3MM,https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf,,SparkFun COM-09650,-,Green 3mm pitch 2.54,-,0.33€

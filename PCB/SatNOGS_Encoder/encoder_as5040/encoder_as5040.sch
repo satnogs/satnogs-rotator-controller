@@ -27,9 +27,8 @@ LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
-LIBS:valves
 LIBS:satnogs
-LIBS:SatNOGS_Encoder-cache
+LIBS:valves
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -51,7 +50,12 @@ P 6255 2645
 F 0 "U1" H 5880 3015 60  0000 C CNN
 F 1 "AS5040" H 6465 2210 60  0000 C CNN
 F 2 "Housings_SSOP:SSOP-16_5.3x6.2mm_Pitch0.65mm" H 6255 2645 60  0001 C CNN
-F 3 "" H 6255 2645 60  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/588/AS5040_Datasheet_EN_v2-473299.pdf" H 6255 2645 60  0001 C CNN
+F 4 "Mouser 985-AS5040-ASST " H 6255 2645 60  0001 C CNN "Distributor"
+F 5 "AS5040-ASST" H 6255 2645 60  0001 C CNN "Manufacturer"
+F 6 "SSOP-16" H 6255 2645 60  0001 C CNN "Package"
+F 7 "-" H 6255 2645 60  0001 C CNN "Notes"
+F 8 "8.73 €" H 6255 2645 60  0001 C CNN "Price"
 	1    6255 2645
 	1    0    0    -1  
 $EndComp
@@ -73,7 +77,12 @@ P 4450 3130
 F 0 "R2" V 4530 3130 50  0000 C CNN
 F 1 "560" V 4450 3130 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4380 3130 30  0001 C CNN
-F 3 "" H 4450 3130 30  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf" H 4450 3130 30  0001 C CNN
+F 4 "Mouser 71-CRCW0805560RJNEA " V 4450 3130 60  0001 C CNN "Distributor"
+F 5 "CRCW0805560RJNEA" V 4450 3130 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 4450 3130 60  0001 C CNN "Package"
+F 7 "1/8W 5%" V 4450 3130 60  0001 C CNN "Notes"
+F 8 " 0.091€" V 4450 3130 60  0001 C CNN "Price"
 	1    4450 3130
 	1    0    0    -1  
 $EndComp
@@ -84,7 +93,12 @@ P 4165 3125
 F 0 "R1" V 4245 3125 50  0000 C CNN
 F 1 "560" V 4165 3125 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4095 3125 30  0001 C CNN
-F 3 "" H 4165 3125 30  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf" H 4165 3125 30  0001 C CNN
+F 4 "Mouser 71-CRCW0805560RJNEA " V 4165 3125 60  0001 C CNN "Distributor"
+F 5 "CRCW0805560RJNEA" V 4165 3125 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 4165 3125 60  0001 C CNN "Package"
+F 7 "1/8W 5%" V 4165 3125 60  0001 C CNN "Notes"
+F 8 "0.091€" V 4165 3125 60  0001 C CNN "Price"
 	1    4165 3125
 	1    0    0    -1  
 $EndComp
@@ -95,7 +109,12 @@ P 4460 4085
 F 0 "R3" V 4540 4085 50  0000 C CNN
 F 1 "100" V 4460 4085 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4390 4085 30  0001 C CNN
-F 3 "" H 4460 4085 30  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/dcrcwe3-109170.pdf" H 4460 4085 30  0001 C CNN
+F 4 "Mouser 71-CRCW0805J-100-E3 " V 4460 4085 60  0001 C CNN "Distributor"
+F 5 "CRCW0805100RJNEC" V 4460 4085 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 4460 4085 60  0001 C CNN "Package"
+F 7 "1/8W 5%" V 4460 4085 60  0001 C CNN "Notes"
+F 8 "0.091€" V 4460 4085 60  0001 C CNN "Price"
 	1    4460 4085
 	0    1    1    0   
 $EndComp
@@ -131,7 +150,12 @@ P 4125 4340
 F 0 "C1" H 4150 4440 50  0000 L CNN
 F 1 "1n" H 4150 4240 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4163 4190 30  0001 C CNN
-F 3 "" H 4125 4340 60  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf" H 4125 4340 60  0001 C CNN
+F 4 "Mouser 77-VJ0805A102KXJPBC " H 4125 4340 60  0001 C CNN "Distributor"
+F 5 "VJ0805A102KXJPW1BC" H 4125 4340 60  0001 C CNN "Manufacturer"
+F 6 "0805" H 4125 4340 60  0001 C CNN "Package"
+F 7 "16VDC" H 4125 4340 60  0001 C CNN "Notes"
+F 8 "0.091€" H 4125 4340 60  0001 C CNN "Price"
 	1    4125 4340
 	-1   0    0    1   
 $EndComp
@@ -196,7 +220,12 @@ P 7940 2675
 F 0 "C4" H 7965 2775 50  0000 L CNN
 F 1 "100n" H 7965 2575 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7978 2525 30  0001 C CNN
-F 3 "" H 7940 2675 60  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf" H 7940 2675 60  0001 C CNN
+F 4 "Mouser 77-VJ0805Y104KXJCBC " H 7940 2675 60  0001 C CNN "Distributor"
+F 5 "VJ0805Y104KXJCW1BC" H 7940 2675 60  0001 C CNN "Manufacturer"
+F 6 "0805" H 7940 2675 60  0001 C CNN "Package"
+F 7 "16VDC" H 7940 2675 60  0001 C CNN "Notes"
+F 8 "0.118€" H 7940 2675 60  0001 C CNN "Price"
 	1    7940 2675
 	1    0    0    -1  
 $EndComp
@@ -207,7 +236,12 @@ P 7420 2675
 F 0 "C2" H 7445 2775 50  0000 L CNN
 F 1 "1u" H 7445 2575 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7458 2525 30  0001 C CNN
-F 3 "" H 7420 2675 60  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf" H 7420 2675 60  0001 C CNN
+F 4 "Mouser 77-VJ0805V105ZXJCBC" H 7420 2675 60  0001 C CNN "Distributor"
+F 5 "VJ0805V105ZXJCW1BC" H 7420 2675 60  0001 C CNN "Manufacturer"
+F 6 "0805" H 7420 2675 60  0001 C CNN "Package"
+F 7 "16VDC" H 7420 2675 60  0001 C CNN "Notes"
+F 8 "0.091€" H 7420 2675 60  0001 C CNN "Price"
 	1    7420 2675
 	1    0    0    -1  
 $EndComp
@@ -218,7 +252,12 @@ P 7685 2675
 F 0 "C3" H 7710 2775 50  0000 L CNN
 F 1 "1u" H 7710 2575 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 7723 2525 30  0001 C CNN
-F 3 "" H 7685 2675 60  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/427/vjw1bcbascomseries-223529.pdf" H 7685 2675 60  0001 C CNN
+F 4 "Mouser 77-VJ0805V105ZXJCBC " H 7685 2675 60  0001 C CNN "Distributor"
+F 5 "VJ0805V105ZXJCW1BC" H 7685 2675 60  0001 C CNN "Manufacturer"
+F 6 "0805" H 7685 2675 60  0001 C CNN "Package"
+F 7 "16VDC" H 7685 2675 60  0001 C CNN "Notes"
+F 8 "0.091€" H 7685 2675 60  0001 C CNN "Price"
 	1    7685 2675
 	1    0    0    -1  
 $EndComp
@@ -260,7 +299,12 @@ P 6130 4315
 F 0 "P1" H 6130 4715 50  0000 C CNN
 F 1 "CONN_02X07" V 6130 4315 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x07" H 6130 3115 60  0001 C CNN
-F 3 "" H 6130 3115 60  0000 C CNN
+F 3 "https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf" H 6130 3115 60  0001 C CNN
+F 4 "SparkFun COM-12792" H 6130 4315 60  0001 C CNN "Distributor"
+F 5 "-" H 6130 4315 60  0001 C CNN "Manufacturer"
+F 6 "2x40 pin right-angle PTH pitch 2.54" H 6130 4315 60  0001 C CNN "Package"
+F 7 "-" H 6130 4315 60  0001 C CNN "Notes"
+F 8 "1.85€" H 6130 4315 60  0001 C CNN "Price"
 	1    6130 4315
 	1    0    0    -1  
 $EndComp
@@ -456,7 +500,12 @@ P 4165 2695
 F 0 "D1" H 4165 2795 50  0000 C CNN
 F 1 "LED" H 4165 2595 50  0000 C CNN
 F 2 "LEDs:LED-3MM" H 4165 2695 60  0001 C CNN
-F 3 "" H 4165 2695 60  0000 C CNN
+F 3 "https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf" H 4165 2695 60  0001 C CNN
+F 4 "SparkFun COM-09650" H 4165 2695 60  0001 C CNN "Distributor"
+F 5 "-" H 4165 2695 60  0001 C CNN "Manufacturer"
+F 6 "Green 3mm pitch 2.54" H 4165 2695 60  0001 C CNN "Package"
+F 7 "-" H 4165 2695 60  0001 C CNN "Notes"
+F 8 "0.33€" H 4165 2695 60  0001 C CNN "Price"
 	1    4165 2695
 	0    -1   -1   0   
 $EndComp
@@ -467,7 +516,12 @@ P 4450 2700
 F 0 "D2" H 4450 2800 50  0000 C CNN
 F 1 "LED" H 4450 2600 50  0000 C CNN
 F 2 "LEDs:LED-3MM" H 4450 2700 60  0001 C CNN
-F 3 "" H 4450 2700 60  0000 C CNN
+F 3 "https://www.sparkfun.com/datasheets/Components/LED/YSL-R341K3D-D2.pdf" H 4450 2700 60  0001 C CNN
+F 4 "SparkFun COM-09650" H 4450 2700 60  0001 C CNN "Distributor"
+F 5 "-" H 4450 2700 60  0001 C CNN "Manufacturer"
+F 6 "Green 3mm pitch 2.54" H 4450 2700 60  0001 C CNN "Package"
+F 7 "-" H 4450 2700 60  0001 C CNN "Notes"
+F 8 "0.33€" H 4450 2700 60  0001 C CNN "Price"
 	1    4450 2700
 	0    -1   -1   0   
 $EndComp

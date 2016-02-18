@@ -1,0 +1,335 @@
+EESchema Schematic File Version 2
+LIBS:satnogs
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:encoder_as5601-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L AS5601 U1
+U 1 1 56B9A895
+P 6150 3050
+F 0 "U1" H 6150 3050 60  0000 C CNN
+F 1 "AS5601" H 6150 2750 60  0000 C CNN
+F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 6150 3050 60  0001 C CNN
+F 3 "www.mouser.com/ds/2/588/AS5601_Datasheet-771178.pdf" H 6150 3050 60  0001 C CNN
+F 4 "Mouser 985-AS5601-ASOM" H 6150 3050 60  0001 C CNN "Distributor"
+F 5 "AS5601-ASOM" H 6150 3050 60  0001 C CNN "Manufacturer"
+F 6 "SOIC-8" H 6150 3050 60  0001 C CNN "Package"
+F 7 "-" H 6150 3050 60  0001 C CNN "Notes"
+F 8 "2.78€" H 6150 3050 60  0001 C CNN "Price"
+	1    6150 3050
+	1    0    0    -1  
+$EndComp
+NoConn ~ 6650 2900
+NoConn ~ 6650 3200
+NoConn ~ 5600 3100
+$Comp
+L C_Small C1
+U 1 1 56B9AC87
+P 4750 3150
+F 0 "C1" H 4760 3220 50  0000 L CNN
+F 1 "100n" H 4760 3070 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4750 3150 50  0001 C CNN
+F 3 "-" H 4750 3150 50  0001 C CNN
+F 4 "-" H 4750 3150 60  0001 C CNN "Distributor"
+F 5 "-" H 4750 3150 60  0001 C CNN "Manufacturer"
+F 6 "0805" H 4750 3150 60  0001 C CNN "Package"
+F 7 "-" H 4750 3150 60  0001 C CNN "Notes"
+F 8 "0.1€" H 4750 3150 60  0001 C CNN "Price"
+	1    4750 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_Small C2
+U 1 1 56B9ACF0
+P 5350 3150
+F 0 "C2" H 5360 3220 50  0000 L CNN
+F 1 "1u" H 5360 3070 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5350 3150 50  0001 C CNN
+F 3 "-" H 5350 3150 50  0001 C CNN
+F 4 "-" H 5350 3150 60  0001 C CNN "Distributor"
+F 5 "-" H 5350 3150 60  0001 C CNN "Manufacturer"
+F 6 "0805" H 5350 3150 60  0001 C CNN "Package"
+F 7 "-" H 5350 3150 60  0001 C CNN "Notes"
+F 8 "0.1 €" H 5350 3150 60  0001 C CNN "Price"
+	1    5350 3150
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR01
+U 1 1 56B9AE6E
+P 5050 3450
+F 0 "#PWR01" H 5050 3200 50  0001 C CNN
+F 1 "GND" H 5050 3300 50  0000 C CNN
+F 2 "" H 5050 3450 50  0000 C CNN
+F 3 "" H 5050 3450 50  0000 C CNN
+	1    5050 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR02
+U 1 1 56B9AE89
+P 5500 3450
+F 0 "#PWR02" H 5500 3200 50  0001 C CNN
+F 1 "GND" H 5500 3300 50  0000 C CNN
+F 2 "" H 5500 3450 50  0000 C CNN
+F 3 "" H 5500 3450 50  0000 C CNN
+	1    5500 3450
+	1    0    0    -1  
+$EndComp
+Text Label 6800 3000 2    60   ~ 0
+SCL
+Text Label 6800 3100 2    60   ~ 0
+SDA
+$Comp
+L PWR_FLAG #FLG03
+U 1 1 56B9C208
+P 5150 3100
+F 0 "#FLG03" H 5150 3195 50  0001 C CNN
+F 1 "PWR_FLAG" H 5150 3280 50  0000 C CNN
+F 2 "" H 5150 3100 50  0000 C CNN
+F 3 "" H 5150 3100 50  0000 C CNN
+	1    5150 3100
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_02X05 P1
+U 1 1 56B9CF83
+P 6150 4200
+F 0 "P1" H 6150 4500 50  0000 C CNN
+F 1 "CONN_02X05" H 6150 3900 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x05" H 6150 3000 50  0001 C CNN
+F 3 "https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf" H 6150 3000 50  0001 C CNN
+F 4 "SparkFun COM-12792" H 6150 4200 60  0001 C CNN "Distributor"
+F 5 "-" H 6150 4200 60  0001 C CNN "Manufacturer"
+F 6 "2x40 pin right-angle PTH pitch 2.54" H 6150 4200 60  0001 C CNN "Package"
+F 7 "-" H 6150 4200 60  0001 C CNN "Notes"
+F 8 "1.85€" H 6150 4200 60  0001 C CNN "Price"
+	1    6150 4200
+	-1   0    0    1   
+$EndComp
+Text Label 5750 4000 0    60   ~ 0
+SCL
+Text Label 6550 4100 2    60   ~ 0
+SDA
+$Comp
+L GND #PWR04
+U 1 1 56B9D56A
+P 6750 4400
+F 0 "#PWR04" H 6750 4150 50  0001 C CNN
+F 1 "GND" H 6750 4250 50  0000 C CNN
+F 2 "" H 6750 4400 50  0000 C CNN
+F 3 "" H 6750 4400 50  0000 C CNN
+	1    6750 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 3000 7050 3000
+Wire Wire Line
+	6650 3100 7350 3100
+Wire Wire Line
+	4750 2900 5600 2900
+Wire Wire Line
+	4750 2900 4750 3050
+Wire Wire Line
+	5150 3000 5600 3000
+Wire Wire Line
+	5350 3000 5350 3050
+Wire Wire Line
+	5600 3200 5500 3200
+Wire Wire Line
+	5500 3200 5500 3450
+Wire Wire Line
+	4750 3400 5350 3400
+Wire Wire Line
+	4750 3400 4750 3250
+Wire Wire Line
+	5350 3400 5350 3250
+Wire Wire Line
+	5050 3450 5050 3400
+Connection ~ 5050 3400
+Wire Wire Line
+	5150 3000 5150 3100
+Connection ~ 5350 3000
+Wire Wire Line
+	5900 4000 5750 4000
+Wire Wire Line
+	6400 4000 6550 4000
+Wire Wire Line
+	5900 4100 5750 4100
+Wire Wire Line
+	6400 4100 6550 4100
+$Comp
+L PWR_FLAG #FLG05
+U 1 1 56B9D7D8
+P 7050 4400
+F 0 "#FLG05" H 7050 4495 50  0001 C CNN
+F 1 "PWR_FLAG" H 7050 4580 50  0000 C CNN
+F 2 "" H 7050 4400 50  0000 C CNN
+F 3 "" H 7050 4400 50  0000 C CNN
+	1    7050 4400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	6550 4400 6400 4400
+Wire Wire Line
+	6400 4200 6550 4200
+Wire Wire Line
+	6550 4200 6550 4400
+Connection ~ 6550 4300
+Wire Wire Line
+	6750 4300 6750 4400
+Wire Wire Line
+	7050 4300 7050 4400
+Wire Wire Line
+	6400 4300 7050 4300
+Connection ~ 6750 4300
+$Comp
+L R R1
+U 1 1 56B9DE8B
+P 7050 2750
+F 0 "R1" V 7130 2750 50  0000 C CNN
+F 1 "4k7" V 7050 2750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 6980 2750 50  0001 C CNN
+F 3 "-" H 7050 2750 50  0001 C CNN
+F 4 "-" V 7050 2750 60  0001 C CNN "Distributor"
+F 5 "-" V 7050 2750 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 7050 2750 60  0001 C CNN "Package"
+F 7 "-" V 7050 2750 60  0001 C CNN "Notes"
+F 8 "0.1 €" V 7050 2750 60  0001 C CNN "Price"
+	1    7050 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 56B9DECB
+P 7350 2750
+F 0 "R2" V 7430 2750 50  0000 C CNN
+F 1 "4k7" V 7350 2750 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" V 7280 2750 50  0001 C CNN
+F 3 "-" H 7350 2750 50  0001 C CNN
+F 4 "-" V 7350 2750 60  0001 C CNN "Distributor"
+F 5 "-" V 7350 2750 60  0001 C CNN "Manufacturer"
+F 6 "0805" V 7350 2750 60  0001 C CNN "Package"
+F 7 "-" V 7350 2750 60  0001 C CNN "Notes"
+F 8 "0.1 €" V 7350 2750 60  0001 C CNN "Price"
+	1    7350 2750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7050 3000 7050 2900
+Wire Wire Line
+	7350 3100 7350 2900
+Wire Wire Line
+	7050 2600 7050 2500
+Wire Wire Line
+	7050 2500 7350 2500
+Wire Wire Line
+	7350 2500 7350 2600
+Wire Wire Line
+	7200 2500 7200 2450
+Connection ~ 7200 2500
+$Comp
+L +5V #PWR06
+U 1 1 56B9E321
+P 7200 2450
+F 0 "#PWR06" H 7200 2300 50  0001 C CNN
+F 1 "+5V" H 7200 2590 50  0000 C CNN
+F 2 "" H 7200 2450 50  0000 C CNN
+F 3 "" H 7200 2450 50  0000 C CNN
+	1    7200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR07
+U 1 1 56B9E3DE
+P 5150 2800
+F 0 "#PWR07" H 5150 2650 50  0001 C CNN
+F 1 "+5V" H 5150 2940 50  0000 C CNN
+F 2 "" H 5150 2800 50  0000 C CNN
+F 3 "" H 5150 2800 50  0000 C CNN
+	1    5150 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2800 5150 2900
+Connection ~ 5150 2900
+Wire Wire Line
+	5900 4200 5750 4200
+Wire Wire Line
+	5500 4300 5900 4300
+Wire Wire Line
+	5750 4400 5900 4400
+Wire Wire Line
+	5750 4200 5750 4400
+Connection ~ 5750 4300
+Wire Wire Line
+	5500 4200 5500 4400
+$Comp
+L +5V #PWR08
+U 1 1 56B9E6C2
+P 5500 4200
+F 0 "#PWR08" H 5500 4050 50  0001 C CNN
+F 1 "+5V" H 5500 4340 50  0000 C CNN
+F 2 "" H 5500 4200 50  0000 C CNN
+F 3 "" H 5500 4200 50  0000 C CNN
+	1    5500 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG09
+U 1 1 56B9E8A5
+P 5500 4400
+F 0 "#FLG09" H 5500 4495 50  0001 C CNN
+F 1 "PWR_FLAG" H 5500 4580 50  0000 C CNN
+F 2 "" H 5500 4400 50  0000 C CNN
+F 3 "" H 5500 4400 50  0000 C CNN
+	1    5500 4400
+	-1   0    0    1   
+$EndComp
+Connection ~ 5500 4300
+Text Label 6550 4000 2    60   ~ 0
+SDA
+Text Label 5750 4100 0    60   ~ 0
+SCL
+$EndSCHEMATC
