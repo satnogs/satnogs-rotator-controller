@@ -3,12 +3,11 @@
 #include <math.h>
 #include <AccelStepper.h>
 
-#define DIR_AZ 18 /*PIN for Azimuth Direction*/
-#define STEP_AZ 10 /*PIN for Azimuth Steps*/
-#define DIR_EL 6 /*PIN for Elevation Direction*/
-#define STEP_EL 7 /*PIN for Elevation Steps*/
+#define DIR_AZ 6 /*PIN for Azimuth Direction*/
+#define STEP_AZ 5 /*PIN for Azimuth Steps*/
+#define DIR_EL 10 /*PIN for Elevation Direction*/
+#define STEP_EL 9 /*PIN for Elevation Steps*/
 
-#define MS1 9 /*PIN for step size*/
 #define EN 8 /*PIN for Enable or Disable Stepper Motors*/
 
 #define SPR 200 /*Step Per Revolution*/
@@ -16,13 +15,13 @@
 #define T_DELAY 60000 /*Time to disable the motors in millisecond*/
 
 #define HOME_AZ 4 /*Homing switch for Azimuth*/
-#define HOME_EL 5 /*Homing switch for Elevation*/
+#define HOME_EL 7 /*Homing switch for Elevation*/
 
 #define MAX_AZ_ANGLE 365 /*Maximum Angle of Azimuth for homing scanning*/
 #define MAX_EL_ANGLE 365 /*Maximum Angle of Elevation for homing scanning*/
 
-#define MAX_SPEED 100
-#define MAX_ACCELERATION 50
+#define MAX_SPEED 300
+#define MAX_ACCELERATION 100
 
 #define MIN_PULSE_WIDTH 20 /*in microsecond*/
 
@@ -53,9 +52,6 @@ void setup()
   /*Enable Motors*/
   pinMode(EN, OUTPUT);
   digitalWrite(EN, LOW);
-  /*Step size*/
-  pinMode(MS1, OUTPUT);
-  digitalWrite(MS1, LOW); /*Full step*/
   /*Homing switch*/
   pinMode(HOME_AZ, INPUT_PULLUP);
   pinMode(HOME_EL, INPUT_PULLUP);
