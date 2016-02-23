@@ -1,25 +1,35 @@
+#include "SoftI2CMaster.h"
+#include <Wire.h>
+
 /* H-bridge defines */
 #define PWM1M1 5
 #define PWM2M1 6
+#define PWM1M2 9
+#define PWM2M2 10
 /* Limits for control signal */
-#define outMax 255
+#define outMax 127
 #define outMin 0
 /* Encoder defines */
-#define SELECT_PIN 7
-#define CLOCK_PIN 8
-#define DATA_PIN 9
+#define sda_pin 16
+#define scl_pin 14
+#define as5601_adr 0x36
+#define raw_ang_high 0x0c
+#define raw_ang_low 0x0d
+#define status_reg 0x0b
 /* Ratio of worm gear */
 #define RATIO 30
 /* Maximum Angle for homing scanning */
-#define MAX_AZ_ANGLE 370
+#define MAX_AZ_ANGLE 110
+#define MAX_EL_ANGLE 370
 /* Homing switch */
-#define HOME_AZ 2
+#define HOME_AZ 4
+#define HOME_EL 7
 /* Change to LOW according to Home sensor */
-#define DEFAULT_HOME_STATE HIGH
+#define DEFAULT_HOME_STATE 1
 /* Time to disable the motors in millisecond */
 #define T_DELAY 60000
 /* PIN for Enable or Disable Stepper Motors */
-#define EN 4
+#define EN 8
 /* Serial configuration */
 #define BufferSize 256
 #define BaudRate 19200
@@ -27,42 +37,49 @@
 unsigned long t_DIS = 0; /*time to disable the Motors*/
 /* angle offset */
 double az_angle_offset = 0;
+double el_angle_offset = 0;
+/* Encoder */
+SoftI2CMaster i2c_soft = SoftI2CMaster(scl_pin, sda_pin, 1);
 
 void setup()
 {
   /* H-bridge */
   pinMode(OUTPUT, PWM1M1);
   pinMode(OUTPUT, PWM2M1);
+  pinMode(OUTPUT, PWM1M2);
+  pinMode(OUTPUT, PWM2M2);
   /* Encoder */
-  pinMode(DATA_PIN, INPUT);
-  pinMode(CLOCK_PIN, OUTPUT);
-  pinMode(SELECT_PIN, OUTPUT);
-  digitalWrite(CLOCK_PIN, HIGH);
-  digitalWrite(SELECT_PIN, HIGH);
+  i2c_soft.begin();
+  Wire.begin();
   /* Homing switch */
   pinMode(HOME_AZ, INPUT_PULLUP);
+  pinMode(HOME_EL, INPUT_PULLUP);
   /* Serial Communication */
   Serial.begin(BaudRate);
-  /* Initial Homing */
-  Homing(-MAX_AZ_ANGLE, true);
   /* Enable Motors */
   pinMode(EN, OUTPUT);
   digitalWrite(EN, HIGH);
+  /* RS485 */
+  //Serial1.begin(9600);
+  //pinMode(A3, OUTPUT);
+  //digitalWrite(A3, HIGH);
+  /* Initial Homing */
+  Homing(-MAX_AZ_ANGLE, -MAX_EL_ANGLE, true);
 }
 
 void loop()
 {
-  static double AZangle = 0;
-
+  double *set_point;
   /* Read commands from serial */
-  cmd_proc(AZangle);
+  set_point = cmd_proc();
   /* Move Motor */
-  dc_move(AZangle);
+  dc_move(set_point);
 }
 
 /* EasyComm 2 Protocol */
-void cmd_proc(double &angleAz)
+double * cmd_proc()
 {
+  static double set_point[] = {0, 0};
   /* Serial */
   char buffer[BufferSize];
   char incomingByte;
@@ -82,54 +99,61 @@ void cmd_proc(double &angleAz)
       {
         if (buffer[2] == ' ' && buffer[3] == 'E' && buffer[4] == 'L')
         {
+          double *pos;
+          pos = get_position();
           /* Get position */
           Serial.print("AZ");
-          Serial.print(getposition(), 1);
+          Serial.print(pos[0], 1);
           Serial.print(" ");
           Serial.print("EL");
-          Serial.println(0, 1);
-          Serial.println(az_angle_offset);
+          Serial.println(pos[1], 1);
         }
         else
         {
           /* Get the absolute value of angle */
           rawData = strtok_r(Data, " " , &Data);
-          strncpy(data, rawData+2, 10);
+          strncpy(data, rawData + 2, 10);
           if (isNumber(data))
-            angleAz = atof(data);
+            set_point[0] = atof(data);
           /* Get the absolute value of angle */
           rawData = strtok_r(Data, " " , &Data);
           if (rawData[0] == 'E' && rawData[1] == 'L')
           {
-            strncpy(data, rawData+2, 10);
+            strncpy(data, rawData + 2, 10);
             if (isNumber(data))
-              ;
+              set_point[1] = atof(data);
           }
         }
       }
       /* Stop Moving */
       else if (buffer[0] == 'S' && buffer[1] == 'A' && buffer[2] == ' ' && buffer[3] == 'S' && buffer[4] == 'E')
       {
-        angleAz = getposition();
+        double *pos;
+        pos = get_position();
         /* Get position */
         Serial.print("AZ");
-        Serial.print(getposition(), 1);
+        Serial.print(pos[0], 1);
         Serial.print(" ");
         Serial.print("EL");
-        Serial.println(0, 1);
+        Serial.println(pos[1], 1);
+        set_point[0] = pos[0];
+        set_point[1] = pos[1];
       }
       /* Reset the rotator */
       else if (buffer[0] == 'R' && buffer[1] == 'E' && buffer[2] == 'S' && buffer[3] == 'E' && buffer[4] == 'T')
       {
+        double *pos;
+        pos = get_position();
         /* Get position */
         Serial.print("AZ");
-        Serial.print(getposition(), 1);
+        Serial.print(pos[0], 1);
         Serial.print(" ");
         Serial.print("EL");
-        Serial.println(0, 1);
+        Serial.println(pos[1], 1);
         /* Move to initial position */
-        Homing(-MAX_AZ_ANGLE, false);
-        angleAz = 0;
+        Homing(-MAX_AZ_ANGLE, -MAX_EL_ANGLE, false);
+        set_point[0] = 0;
+        set_point[1] = 0;
       }
       BufferCnt = 0;
     }
@@ -139,27 +163,57 @@ void cmd_proc(double &angleAz)
       BufferCnt++;
     }
   }
+  return set_point;
 }
 
 /* Homing Function */
-void Homing(double AZangle, bool Init)
+void Homing(double AZangle, double ELangle, bool Init)
 {
   int value_Home_AZ = DEFAULT_HOME_STATE;
+  int value_Home_EL = DEFAULT_HOME_STATE;
   boolean isHome_AZ = false;
-  double az_zero_angle = getposition();
+  boolean isHome_EL = false;
+  double *zero_angle;
+  double *curr_angle;
+  double set_point[] = {0, 0};
 
-  while(isHome_AZ == false )
+  zero_angle = get_position();
+
+  if (zero_angle[0] > 0)
+    set_point[0] = AZangle;
+  else
+    set_point[0] = -AZangle;
+
+  if (zero_angle[1] > 0)
+    set_point[1] = ELangle;
+  else
+    set_point[1] = -ELangle;
+
+  while (isHome_AZ == false || isHome_EL == false)
   {
-    dc_move(AZangle);
+    dc_move(set_point);
     value_Home_AZ = digitalRead(HOME_AZ);
+    value_Home_EL = digitalRead(HOME_EL);
+
     /* Change to LOW according to Home sensor */
     if (value_Home_AZ == DEFAULT_HOME_STATE)
     {
       isHome_AZ = true;
+      curr_angle = get_position();
+      set_point[0] = 0;
       if (Init)
-        az_angle_offset = getposition();
+        az_angle_offset = curr_angle[0];
     }
-    if (abs(getposition() - az_zero_angle) > MAX_AZ_ANGLE && !isHome_AZ)
+    if (value_Home_EL == DEFAULT_HOME_STATE)
+    {
+      isHome_EL = true;
+      curr_angle = get_position();
+      set_point[1] = 0;
+      if (Init)
+        el_angle_offset = curr_angle[1];
+    }
+    curr_angle = get_position();
+    if ((abs(curr_angle[0] - zero_angle[0]) > MAX_AZ_ANGLE && !isHome_AZ) || (abs(curr_angle[1] - zero_angle[1]) > MAX_EL_ANGLE && !isHome_EL))
     {
       /* set error */
       break;
@@ -167,75 +221,172 @@ void Homing(double AZangle, bool Init)
   }
 }
 
-void dc_move(double set_point_az)
+void dc_move(double set_point[])
 {
-  static double u = 0;
-  static double angle_az = 0;
-  static double prev_angle_az = 0;
-  static double error = 0;
-  static double Iterm = 0;
-  static double Pterm = 0;
-  static double Dterm = 0;
-  double Kp = 2000;
+  static double u[] = {0, 0};
+  static double *curr_pos;
+  static double prev_pos[] = {0, 0};
+  static double error[] = {0, 0};
+  static double Iterm[] = {0, 0};
+  static double Pterm[] = {0, 0};
+  static double Dterm[] = {0, 0};
+  double Kp = 200;
   double Ki = 1;
   double Kd = 0;
-  double dt = 0.001;
+  double dt = 0.001; // calculate
 
-  angle_az = getposition();
-  error = set_point_az - angle_az;
+  curr_pos = get_position();
+  error[0] = set_point[0] - curr_pos[0];
+  error[1] = set_point[1] - curr_pos[1];
 
-  Pterm = Kp*error;
+  Pterm[0] = Kp * error[0];
+  Pterm[1] = Kp * error[1];
 
-  Iterm += Ki*error*dt;
-  if(Iterm > outMax) Iterm= outMax;
-  else if(Iterm < outMin) Iterm= outMin;
+  Iterm[0] += Ki * error[0] * dt;
+  Iterm[1] += Ki * error[1] * dt;
+  if (Iterm[0] > outMax) Iterm[0] = outMax;
+  else if (Iterm[0] < outMin) Iterm[0] = outMin;
+  if (Iterm[1] > outMax) Iterm[1] = outMax;
+  else if (Iterm[1] < outMin) Iterm[1] = outMin;
 
-  Dterm = Kd*(angle_az - prev_angle_az)/dt;
-  prev_angle_az = angle_az;
+  Dterm[0] = Kd * (curr_pos[0] - prev_pos[0]) / dt;
+  prev_pos[0] = curr_pos[0];
+  Dterm[1] = Kd * (curr_pos[1] - prev_pos[1]) / dt;
+  prev_pos[1] = curr_pos[1];
 
-  u = Pterm+Iterm+Dterm;
+  u[0] = Pterm[0] + Iterm[0] + Dterm[0];
+  u[1] = Pterm[1] + Iterm[1] + Dterm[1];
 
-  if (u >= 0)
+  if (u[0] >= 0)
   {
-    if (u > outMax)
-      u = outMax;
-    analogWrite(PWM1M1, u);
+    if (u[0] > outMax)
+      u[0] = outMax;
+    analogWrite(PWM1M1, u[0]);
     analogWrite(PWM2M1, 0);
   }
   else
   {
-    u = -u;
-    if ( u > outMax)
-      u = outMax;
+    u[0] = -u[0];
+    if ( u[0] > outMax)
+      u[0] = outMax;
     analogWrite(PWM1M1, 0);
-    analogWrite(PWM2M1, u);
+    analogWrite(PWM2M1, u[0]);
+  }
+
+  if (u[1] >= 0)
+  {
+    if (u[1] > outMax)
+      u[1] = outMax;
+    analogWrite(PWM1M2, u[1]);
+    analogWrite(PWM2M2, 0);
+  }
+  else
+  {
+    u[1] = -u[1];
+    if ( u[1] > outMax)
+      u[1] = outMax;
+    analogWrite(PWM1M2, 0);
+    analogWrite(PWM2M2, u[1]);
   }
 }
 
-/* get position from encoder */
-double getposition()
+/* Read Encoders */
+double * get_position()
 {
-  double encoder_pos;
-  double delta_pos;
-  double real_pos;
-  static double prev_pos = 0;
-  int raw_pos;
-  static int n = 0;
+  int low_raw, high_raw, status_val;
+  double raw_pos = 0;
+  double delta_raw_pos = 0;
+  static double raw_prev_pos[] = {0, 0};
+  static double real_pos[] = {0, 0};
+  static int n[] = {0, 0};
 
-  raw_pos = readPosition();
-  if (raw_pos >= 0)
+  /* Axis 1*/
+  /* Read Raw Angle Low Byte */
+  Wire.beginTransmission(as5601_adr);
+  Wire.write(raw_ang_low);
+  Wire.endTransmission();
+  Wire.requestFrom(as5601_adr, 1);
+  while(Wire.available() == 0);
+  low_raw = Wire.read();
+  /* Read Raw Angle High Byte */
+  Wire.beginTransmission(as5601_adr);
+  Wire.write(raw_ang_high);
+  Wire.endTransmission();
+  Wire.requestFrom(as5601_adr, 1);
+  while(Wire.available() == 0);
+  high_raw = Wire.read();
+  high_raw = high_raw << 8;
+  high_raw = high_raw | low_raw;
+  /* Read Status Bits */
+  Wire.beginTransmission(as5601_adr);
+  Wire.write(status_reg);
+  Wire.endTransmission();
+  Wire.requestFrom(as5601_adr, 1);
+  while(Wire.available() == 0);
+  status_val = Wire.read();
+  /* Check the status register */
+  if ((status_val & 0x20) && !(status_val & 0x10) && !(status_val & 0x08))
   {
-    encoder_pos = ((float)raw_pos / 1024.0) * 360.0;
-    delta_pos = prev_pos - encoder_pos;
-    if (delta_pos > 180)
-      n++;
-    else if (delta_pos < -180)
-      n--;
-    real_pos = ((encoder_pos + 360*n)/RATIO) - az_angle_offset;
-    prev_pos = encoder_pos;
+    if (high_raw >= 0)
+    {
+      raw_pos = (double)high_raw*0.0879;
+      delta_raw_pos = raw_prev_pos[0] - raw_pos;
+      if (delta_raw_pos > 180)
+        n[0]++;
+      else if (delta_raw_pos < -180)
+        n[0]--;
+      real_pos[0] = ((raw_pos + 360 * n[0]) / RATIO) - az_angle_offset;
+      raw_prev_pos[0] = raw_pos;
+    }
+    else
+      ; /* set error  */
   }
   else
-    ; /* set error  */
+    ; /* set error */
+
+  /* Axis 2 */
+  /* Read Raw Angle Low Byte */
+  i2c_soft.beginTransmission(as5601_adr);
+  i2c_soft.write(raw_ang_low);
+  i2c_soft.endTransmission();
+  i2c_soft.requestFrom(as5601_adr);
+  low_raw = i2c_soft.readLast();
+  i2c_soft.endTransmission();
+  /* Read Raw Angle High Byte */
+  i2c_soft.beginTransmission(as5601_adr);
+  i2c_soft.write(raw_ang_high);
+  i2c_soft.endTransmission();
+  i2c_soft.requestFrom(as5601_adr);
+  high_raw = i2c_soft.readLast();
+  i2c_soft.endTransmission();
+  high_raw = high_raw << 8;
+  high_raw = high_raw | low_raw;
+  /* Read Status Bits */
+  i2c_soft.beginTransmission(as5601_adr);
+  i2c_soft.write(status_reg);
+  i2c_soft.endTransmission();
+  i2c_soft.requestFrom(as5601_adr);
+  status_val = i2c_soft.readLast();
+  i2c_soft.endTransmission();
+  /* Check the status register */
+  if ((status_val & 0x20) && !(status_val & 0x10) && !(status_val & 0x08))
+  {
+    if (high_raw >= 0)
+    {
+      raw_pos = (double)high_raw*0.0879;
+      delta_raw_pos = raw_prev_pos[1] - raw_pos;
+      if (delta_raw_pos > 180)
+        n[1]++;
+      else if (delta_raw_pos < -180)
+        n[1]--;
+      real_pos[1] = ((raw_pos + 360 * n[1]) / RATIO) - el_angle_offset;
+      raw_prev_pos[1] = raw_pos;
+    }
+    else
+      ; /* set error  */
+  }
+  else
+    ; /* set error */
 
   return real_pos;
 }
@@ -248,67 +399,6 @@ boolean isNumber(char *input)
     if (isalpha(input[i]))
       return false;
   }
-   return true;
-}
-
-/* Code from http://reprap.org/wiki/Magnetic_Rotary_Encoder_1.0 */
-
-/* read the current angular position */
-int readPosition()
-{
-  unsigned int position = 0;
-
-  /* shift in our data */
-  digitalWrite(SELECT_PIN, LOW);
-  delayMicroseconds(0.5);
-  byte d1 = shiftIn(DATA_PIN, CLOCK_PIN);
-  byte d2 = shiftIn(DATA_PIN, CLOCK_PIN);
-  digitalWrite(SELECT_PIN, HIGH);
-
-  /* get our position variable */
-  position = d1;
-  position = position << 8;
-  position |= d2;
-
-  position = position >> 6;
-
-  /* check the offset compensation flag: 1 == started up */
-  if (!(d2 & B00100000))
-    position = -1;
-
-  /* check the cordic overflow flag: 1 = error */
-  if (d2 & B00010000)
-    position = -2;
-
-  /* check the linearity alarm: 1 = error */
-  if (d2 & B00001000)
-    position = -3;
-
-  /* check the magnet range: 11 = error */
-  if ((d2 & B00000110) == B00000110)
-    position = -4;
-
-  return position;
-}
-
-/* read in a byte of data from the digital input of the board. */
-byte shiftIn(byte data_pin, byte clock_pin)
-{
-  byte data = 0;
-
-  for (int i=7; i>=0; i--)
-  {
-    digitalWrite(clock_pin, LOW);
-    delayMicroseconds(0.5);
-    digitalWrite(clock_pin, HIGH);
-    delayMicroseconds(0.5);
-    digitalWrite(clock_pin, LOW);
-
-    byte bit = digitalRead(data_pin);
-    data |= (bit << i);
-
-  }
-
-  return data;
+  return true;
 }
 
