@@ -9,6 +9,11 @@ D Sparkfun Pro Micro
 K Arduino Compatible
 $ENDCMP
 #
+$CMP Pro_Mini
+D Arduino Pro Mini
+K Arduino
+$ENDCMP
+#
 $CMP SW_PUSH
 D Push Button
 K Switch
