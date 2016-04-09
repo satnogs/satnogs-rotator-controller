@@ -336,7 +336,8 @@ F 3 "http://www.mouser.com/ds/2/427/SI2312CD-244454.pdf" H 6315 4610 50  0001 C 
 F 4 "Mouser 781-SI2312CDS-T1-GE3" H 6315 4610 60  0001 C CNN "Distributor"
 F 5 "SI2312CDS-T1-GE3" H 6315 4610 60  0001 C CNN "Manufacturer"
 F 6 "SOT-23-3" H 6315 4610 60  0001 C CNN "Package"
-F 7 "0.398" H 6315 4610 60  0001 C CNN "Price"
+F 7 "-" H 6315 4610 60  0001 C CNN "Notes"
+F 8 "0.398" H 6315 4610 60  0001 C CNN "Price"
 	1    6315 4610
 	0    -1   1    0   
 $EndComp

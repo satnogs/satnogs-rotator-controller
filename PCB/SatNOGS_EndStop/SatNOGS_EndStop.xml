@@ -2,8 +2,8 @@
 <export version="D">
   <design>
     <source>/home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/SatNOGS_EndStop/SatNOGS_EndStop.sch</source>
-    <date>Wed 17 Feb 2016 18:55:33 EET</date>
-    <tool>Eeschema 4.0.1-stable</tool>
+    <date>Sat 09 Apr 2016 00:45:46 EEST</date>
+    <tool>Eeschema 4.0.2-stable</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title/>
@@ -19,7 +19,7 @@
     </sheet>
   </design>
   <components>
-    <comp ref="U1">
+    <comp ref="SW1">
       <value>TCST2103</value>
       <footprint>satnogs:TCST2103</footprint>
       <datasheet>http://www.mouser.com/ds/2/427/tcst2103-279826.pdf</datasheet>
@@ -109,6 +109,21 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamp>55BE41ED</tstamp>
     </comp>
+    <comp ref="Q1">
+      <value>Q_NMOS_GSD</value>
+      <footprint>TO_SOT_Packages_SMD:SOT-23_Handsoldering</footprint>
+      <datasheet>http://www.mouser.com/ds/2/427/SI2312CD-244454.pdf</datasheet>
+      <fields>
+        <field name="Distributor">Mouser 781-SI2312CDS-T1-GE3</field>
+        <field name="Manufacturer">SI2312CDS-T1-GE3</field>
+        <field name="Package">SOT-23-3</field>
+        <field name="Notes">-</field>
+        <field name="Price">0.398</field>
+      </fields>
+      <libsource lib="device" part="Q_NMOS_GSD"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5703748F</tstamp>
+    </comp>
   </components>
   <libparts>
     <libpart lib="conn" part="CONN_01X03">
@@ -148,6 +163,18 @@
         <pin num="2" name="A" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="device" part="Q_NMOS_GSD">
+      <description>Transistor N-MOSFET (general)</description>
+      <fields>
+        <field name="Reference">Q</field>
+        <field name="Value">Q_NMOS_GSD</field>
+      </fields>
+      <pins>
+        <pin num="1" name="G" type="input"/>
+        <pin num="2" name="S" type="passive"/>
+        <pin num="3" name="D" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="device" part="R">
       <description>Resistor</description>
       <footprints>
@@ -166,7 +193,7 @@
     <libpart lib="satnogs" part="TCST2103">
       <description>Transmissive Optical Sensor with Phototransistor Output</description>
       <fields>
-        <field name="Reference">U</field>
+        <field name="Reference">SW</field>
         <field name="Value">TCST2103</field>
       </fields>
       <pins>
@@ -178,41 +205,46 @@
     </libpart>
   </libparts>
   <libraries>
-    <library logical="conn">
-      <uri>/usr/share/kicad/library/conn.lib</uri>
-    </library>
     <library logical="satnogs">
       <uri>/home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib</uri>
     </library>
     <library logical="device">
       <uri>/usr/share/kicad/library/device.lib</uri>
     </library>
+    <library logical="conn">
+      <uri>/usr/share/kicad/library/conn.lib</uri>
+    </library>
   </libraries>
   <nets>
-    <net code="1" name="/Signal">
-      <node ref="R2" pin="2"/>
-      <node ref="D1" pin="2"/>
-      <node ref="U1" pin="3"/>
-      <node ref="P1" pin="3"/>
+    <net code="1" name="Net-(P1-Pad2)">
+      <node ref="Q1" pin="3"/>
+      <node ref="P1" pin="2"/>
     </net>
-    <net code="2" name="+5V">
+    <net code="2" name="GND">
+      <node ref="SW1" pin="2"/>
+      <node ref="SW1" pin="4"/>
+      <node ref="R3" pin="2"/>
+      <node ref="Q1" pin="2"/>
+    </net>
+    <net code="3" name="Net-(R1-Pad2)">
+      <node ref="SW1" pin="1"/>
+      <node ref="R1" pin="2"/>
+    </net>
+    <net code="4" name="+5V">
+      <node ref="Q1" pin="1"/>
+      <node ref="P1" pin="1"/>
       <node ref="R2" pin="1"/>
       <node ref="R1" pin="1"/>
-      <node ref="P1" pin="1"/>
     </net>
-    <net code="3" name="Net-(D1-Pad1)">
+    <net code="5" name="Net-(D1-Pad1)">
       <node ref="R3" pin="1"/>
       <node ref="D1" pin="1"/>
     </net>
-    <net code="4" name="GND">
-      <node ref="P1" pin="2"/>
-      <node ref="R3" pin="2"/>
-      <node ref="U1" pin="2"/>
-      <node ref="U1" pin="4"/>
-    </net>
-    <net code="5" name="Net-(R1-Pad2)">
-      <node ref="U1" pin="1"/>
-      <node ref="R1" pin="2"/>
+    <net code="6" name="/Signal">
+      <node ref="SW1" pin="3"/>
+      <node ref="R2" pin="2"/>
+      <node ref="P1" pin="3"/>
+      <node ref="D1" pin="2"/>
     </net>
   </nets>
 </export>

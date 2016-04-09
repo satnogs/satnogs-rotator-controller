@@ -97,7 +97,7 @@ L CONN_01X18 P5
 U 1 1 568A994A
 P 10030 3155
 F 0 "P5" H 10030 4105 50  0000 C CNN
-F 1 "CONN_01X18" V 10130 3155 50  0000 C CNN
+F 1 "DC Motors Driver" V 10130 3155 50  0000 C CNN
 F 2 "satnogs:pin_socket_18" H 10030 3155 60  0001 C CNN
 F 3 "-" H 10030 3155 60  0001 C CNN
 F 4 "SparkFun PRT-00115" H 10030 3155 60  0001 C CNN "Distributor"
@@ -113,7 +113,7 @@ L CONN_01X04 P1
 U 1 1 568AA2DF
 P 1615 1850
 F 0 "P1" H 1615 2100 50  0000 C CNN
-F 1 "CONN_01X04" V 1715 1850 50  0000 C CNN
+F 1 "RS485" V 1715 1850 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x04" H 1615 1850 60  0001 C CNN
 F 3 "-" H 1615 1850 60  0001 C CNN
 F 4 "SparkFun PRT-00553" H 1615 1850 60  0001 C CNN "Distributor"
@@ -214,7 +214,7 @@ L CONN_02X04 P4
 U 1 1 568B74B0
 P 8000 1685
 F 0 "P4" H 8000 1935 50  0000 C CNN
-F 1 "CONN_02X04" H 8000 1435 50  0000 C CNN
+F 1 "I2C" H 8000 1435 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x04" H 8000 485 60  0001 C CNN
 F 3 "https://cdn.sparkfun.com/datasheets/Prototyping/16188.pdf" H 8000 485 60  0001 C CNN
 F 4 "SparkFun PRT-12791" H 8000 1685 60  0001 C CNN "Distributor"
@@ -437,7 +437,7 @@ L CONN_02X03 P2
 U 1 1 56913B34
 P 6200 1675
 F 0 "P2" H 6200 1875 50  0000 C CNN
-F 1 "CONN_02X03" H 6200 1475 50  0000 C CNN
+F 1 "End-Stops" H 6200 1475 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x03" H 6200 475 60  0001 C CNN
 F 3 "https://cdn.sparkfun.com/datasheets/Prototyping/16188.pdf" H 6200 475 60  0001 C CNN
 F 4 "SparkFun PRT-12791" H 6200 1675 60  0001 C CNN "Distributor"
@@ -727,7 +727,7 @@ L CONN_01X04 P7
 U 1 1 56BFEE7D
 P 3185 5000
 F 0 "P7" H 3185 5250 50  0000 C CNN
-F 1 "CONN_01X04" V 3285 5000 50  0000 C CNN
+F 1 "Motor1" V 3285 5000 50  0000 C CNN
 F 2 "Connect:bornier4" H 3185 5000 50  0001 C CNN
 F 3 "https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-5mm.pdf" H 3185 5000 50  0001 C CNN
 F 4 "SparkFun PRT-08432" H 3185 5000 60  0001 C CNN "Distributor"
@@ -925,7 +925,7 @@ L CONN_01X04 P8
 U 1 1 56C001FC
 P 7095 5000
 F 0 "P8" H 7095 5250 50  0000 C CNN
-F 1 "CONN_01X04" V 7195 5000 50  0000 C CNN
+F 1 "Motor2" V 7195 5000 50  0000 C CNN
 F 2 "Connect:bornier4" H 7095 5000 50  0001 C CNN
 F 3 "https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-5mm.pdf" H 7095 5000 50  0001 C CNN
 F 4 "SparkFun PRT-08432" H 7095 5000 60  0001 C CNN "Distributor"
@@ -941,7 +941,7 @@ L CONN_01X02 P6
 U 1 1 56C0231A
 P 1545 5030
 F 0 "P6" H 1545 5180 50  0000 C CNN
-F 1 "CONN_01X02" V 1645 5030 50  0000 C CNN
+F 1 "Power-IN" V 1645 5030 50  0000 C CNN
 F 2 "Connect:bornier2" H 1545 5030 50  0001 C CNN
 F 3 "https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-5mm.pdf" H 1545 5030 50  0001 C CNN
 F 4 "SparkFun PRT-08432" H 1545 5030 60  0001 C CNN "Distributor"
@@ -1162,7 +1162,12 @@ P 5660 3195
 F 0 "U1" H 5660 3195 60  0000 C CNN
 F 1 "Pro_Mini" H 5670 2255 60  0000 C CNN
 F 2 "satnogs:pro-mini" H 5660 3095 60  0001 C CNN
-F 3 "" H 5660 3095 60  0000 C CNN
+F 3 "-" H 5660 3095 60  0001 C CNN
+F 4 "SparkFun PRT-00115" H 5660 3195 60  0001 C CNN "Distributor"
+F 5 "-" H 5660 3195 60  0001 C CNN "Manufacturer"
+F 6 "1x40 female header PTH pitch 2.54" H 5660 3195 60  0001 C CNN "Package"
+F 7 "https://www.sparkfun.com/products/115" H 5660 3195 60  0001 C CNN "Notes"
+F 8 "1.42€" H 5660 3195 60  0001 C CNN "Price"
 	1    5660 3195
 	1    0    0    -1  
 $EndComp
@@ -1509,7 +1514,12 @@ P 2325 1850
 F 0 "D1" H 2325 1950 50  0000 C CNN
 F 1 "ZENERsmall" H 2325 1750 50  0000 C CNN
 F 2 "Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10" H 2325 1850 50  0001 C CNN
-F 3 "" H 2325 1850 50  0000 C CNN
+F 3 "http://www.mouser.com/ds/2/149/BZX85C10-888846.pdf" H 2325 1850 50  0001 C CNN
+F 4 "Mouser 512-BZX85C10" H 2325 1850 60  0001 C CNN "Distributor"
+F 5 "BZX85C10" H 2325 1850 60  0001 C CNN "Manufacturer"
+F 6 "DO-41" H 2325 1850 60  0001 C CNN "Package"
+F 7 "10V-1W" H 2325 1850 60  0001 C CNN "Notes"
+F 8 "0.192€" H 2325 1850 60  0001 C CNN "Price"
 	1    2325 1850
 	0    1    1    0   
 $EndComp
@@ -1548,18 +1558,25 @@ A3
 Text Label 3990 1635 2    60   ~ 0
 A2
 Text Notes 6810 2580 0    61   ~ 0
-Regulator in pro-mini, is MIC5205:\n5V@150mA\nReverse-current protection
+Regulator in pro-mini, is MIC5205:\n5V@150mA with reverse-current protection
 $Comp
 L CONN_02X02 P9
 U 1 1 5705A45E
 P 4370 1585
 F 0 "P9" H 4370 1735 50  0000 C CNN
-F 1 "CONN_02X02" H 4370 1435 50  0000 C CNN
+F 1 "Dev-Pins" H 4370 1435 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Straight_2x02" H 4370 385 50  0001 C CNN
-F 3 "" H 4370 385 50  0000 C CNN
+F 3 "https://cdn.sparkfun.com/datasheets/Prototyping/16188.pdf" H 4370 385 50  0001 C CNN
+F 4 "SparkFun PRT-12791" H 4370 1585 60  0001 C CNN "Distributor"
+F 5 "-" H 4370 1585 60  0001 C CNN "Manufacturer"
+F 6 "-" H 4370 1585 60  0001 C CNN "Package"
+F 7 "https://www.sparkfun.com/products/12791" H 4370 1585 60  0001 C CNN "Notes"
+F 8 "-" H 4370 1585 60  0001 C CNN "Price"
 	1    4370 1585
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6290 3545
 NoConn ~ 6290 3645
+Text Notes 1450 4140 0    61   ~ 0
+Failsafe-biasing network for \nlegacy transceivers like SP485CN-L\n
 $EndSCHEMATC

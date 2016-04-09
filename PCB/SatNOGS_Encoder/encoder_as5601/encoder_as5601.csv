@@ -1,7 +1,8 @@
-Reference, Value, Footprint, Datasheet, , Distributor, Manufacturer, Package, Notes, Price
-U1,AS5601,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,www.mouser.com/ds/2/588/AS5601_Datasheet-771178.pdf,,Mouser 985-AS5601-ASOM,AS5601-ASOM,SOIC-8,-,2.78€
-C1,100n,Capacitors_SMD:C_0805_HandSoldering,-,,-,-,805,-,0.1€
-C2,1u,Capacitors_SMD:C_0805_HandSoldering,-,,-,-,805,-,0.1 €
-P1,CONN_02X05,Pin_Headers:Pin_Header_Straight_2x05,https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf,,SparkFun COM-12792,-,2x40 pin right-angle PTH pitch 2.54,-,1.85€
-R1,4k7,Resistors_SMD:R_0805_HandSoldering,-,,-,-,805,-,0.1 €
-R2,4k7,Resistors_SMD:R_0805_HandSoldering,-,,-,-,805,-,0.1 €
+Reference, Value, Footprint, Datasheet, Distributor, Manufacturer, Package, Notes, Price
+U1,AS5601,Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm,www.mouser.com/ds/2/588/AS5601_Datasheet-771178.pdf,,Mouser 985-AS5601-ASOM,AS5601-ASOM,SOIC-8,-,2.78€,
+C1,100n,Capacitors_SMD:C_0805_HandSoldering,-,,-,-,0805,-,0.1€,
+C2,1u,Capacitors_SMD:C_0805_HandSoldering,-,,-,-,0805,-,0.1 €,
+P1,CONN_02X05,Pin_Headers:Pin_Header_Straight_2x05,https://cdn.sparkfun.com/datasheets/Prototyping/01103.pdf,,SparkFun COM-12792,-,2x40 pin right-angle PTH pitch 2.54,-,1.85€,
+R1,4k7,Resistors_SMD:R_0805_HandSoldering,-,,-,-,0805,-,0.1 €,
+R2,4k7,Resistors_SMD:R_0805_HandSoldering,-,,-,-,0805,-,0.1 €,
+Q1,Q_NMOS_GSD,TO_SOT_Packages_SMD:SOT-23_Handsoldering,http://www.mouser.com/ds/2/427/SI2312CD-244454.pdf,,Mouser 781-SI2312CDS-T1-GE3,SI2312CDS-T1-GE3,SOT-23-3,-,0.398,

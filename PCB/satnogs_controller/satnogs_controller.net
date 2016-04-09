@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/satnogs_controller/satnogs_controller.sch)
-    (date "Wed 06 Apr 2016 18:19:26 EEST")
+    (date "Sat 09 Apr 2016 01:04:18 EEST")
     (tool "Eeschema 4.0.2-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -16,7 +16,7 @@
         (comment (number 4) (value "")))))
   (components
     (comp (ref P5)
-      (value CONN_01X18)
+      (value "DC Motors Driver")
       (footprint satnogs:pin_socket_18)
       (datasheet -)
       (fields
@@ -29,7 +29,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 568A994A))
     (comp (ref P1)
-      (value CONN_01X04)
+      (value RS485)
       (footprint Pin_Headers:Pin_Header_Angled_1x04)
       (datasheet -)
       (fields
@@ -42,7 +42,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 568AA2DF))
     (comp (ref P4)
-      (value CONN_02X04)
+      (value I2C)
       (footprint Pin_Headers:Pin_Header_Straight_2x04)
       (datasheet https://cdn.sparkfun.com/datasheets/Prototyping/16188.pdf)
       (fields
@@ -81,7 +81,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 568DB4B3))
     (comp (ref P2)
-      (value CONN_02X03)
+      (value End-Stops)
       (footprint Pin_Headers:Pin_Header_Straight_2x03)
       (datasheet https://cdn.sparkfun.com/datasheets/Prototyping/16188.pdf)
       (fields
@@ -185,7 +185,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 56BFCE50))
     (comp (ref P7)
-      (value CONN_01X04)
+      (value Motor1)
       (footprint Connect:bornier4)
       (datasheet https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-5mm.pdf)
       (fields
@@ -276,7 +276,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 56C001EB))
     (comp (ref P8)
-      (value CONN_01X04)
+      (value Motor2)
       (footprint Connect:bornier4)
       (datasheet https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-5mm.pdf)
       (fields
@@ -289,7 +289,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 56C001FC))
     (comp (ref P6)
-      (value CONN_01X02)
+      (value Power-IN)
       (footprint Connect:bornier2)
       (datasheet https://www.sparkfun.com/datasheets/Prototyping/Screw-Terminal-5mm.pdf)
       (fields
@@ -395,18 +395,39 @@
     (comp (ref U1)
       (value Pro_Mini)
       (footprint satnogs:pro-mini)
+      (datasheet -)
+      (fields
+        (field (name Distributor) "SparkFun PRT-00115")
+        (field (name Manufacturer) -)
+        (field (name Package) "1x40 female header PTH pitch 2.54")
+        (field (name Notes) https://www.sparkfun.com/products/115)
+        (field (name Price) 1.42€))
       (libsource (lib satnogs) (part Pro_Mini))
       (sheetpath (names /) (tstamps /))
       (tstamp 5704991B))
     (comp (ref D1)
       (value ZENERsmall)
       (footprint Diodes_ThroughHole:Diode_DO-41_SOD81_Horizontal_RM10)
+      (datasheet http://www.mouser.com/ds/2/149/BZX85C10-888846.pdf)
+      (fields
+        (field (name Distributor) "Mouser 512-BZX85C10")
+        (field (name Manufacturer) BZX85C10)
+        (field (name Package) DO-41)
+        (field (name Notes) 10V-1W)
+        (field (name Price) 0.192€))
       (libsource (lib device) (part ZENERsmall))
       (sheetpath (names /) (tstamps /))
       (tstamp 570603CB))
     (comp (ref P9)
-      (value CONN_02X02)
+      (value Dev-Pins)
       (footprint Pin_Headers:Pin_Header_Straight_2x02)
+      (datasheet https://cdn.sparkfun.com/datasheets/Prototyping/16188.pdf)
+      (fields
+        (field (name Distributor) "SparkFun PRT-12791")
+        (field (name Manufacturer) -)
+        (field (name Package) -)
+        (field (name Notes) https://www.sparkfun.com/products/12791)
+        (field (name Price) -))
       (libsource (lib conn) (part CONN_02X02))
       (sheetpath (names /) (tstamps /))
       (tstamp 5705A45E)))
@@ -650,12 +671,12 @@
         (pin (num 1) (name K) (type passive))
         (pin (num 2) (name A) (type passive)))))
   (libraries
-    (library (logical conn)
-      (uri /usr/share/kicad/library/conn.lib))
     (library (logical device)
       (uri /usr/share/kicad/library/device.lib))
     (library (logical satnogs)
-      (uri /home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib)))
+      (uri /home/azisi/Documents/SatNOGS/satnogs-rotator-controller/PCB/library/satnogs.lib))
+    (library (logical conn)
+      (uri /usr/share/kicad/library/conn.lib)))
   (nets
     (net (code 1) (name /M2IN2)
       (node (ref U4) (pin 15))
