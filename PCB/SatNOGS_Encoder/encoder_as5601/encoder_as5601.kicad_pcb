@@ -1,4 +1,4 @@
-(kicad_pcb (version 4) (host pcbnew 4.0.4-stable)
+(kicad_pcb (version 4) (host pcbnew 4.0.3-1.fc24-product)
 
   (general
     (links 20)
@@ -144,7 +144,7 @@
     (tags "resistor 0805")
     (path /56B9DE8B)
     (attr smd)
-    (fp_text reference R1 (at -3.81 0.635 270) (layer F.SilkS)
+    (fp_text reference R1 (at -3.81 0 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 4k7 (at 0 2.1 270) (layer F.Fab) hide
@@ -173,7 +173,7 @@
     (tags "SOIC 1.27")
     (path /56B9A895)
     (attr smd)
-    (fp_text reference U1 (at 3.015 3.81) (layer F.SilkS)
+    (fp_text reference U1 (at -5.08 1.905 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value AS5601 (at 0 3.5) (layer F.Fab) hide
@@ -224,7 +224,7 @@
     (tags "capacitor 0805")
     (path /56B9AC87)
     (attr smd)
-    (fp_text reference C1 (at 3.81 0.635 90) (layer F.SilkS)
+    (fp_text reference C1 (at 3.81 0 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 100n (at 0 2.1 90) (layer F.Fab) hide
@@ -253,7 +253,7 @@
     (tags "capacitor 0805")
     (path /56B9ACF0)
     (attr smd)
-    (fp_text reference C2 (at 3.81 0.635 90) (layer F.SilkS)
+    (fp_text reference C2 (at 3.81 0 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 1u (at 0 2.1 90) (layer F.Fab) hide
@@ -282,7 +282,7 @@
     (tags SOT-23)
     (path /5703C90F)
     (attr smd)
-    (fp_text reference Q1 (at 2.54 0 360) (layer F.SilkS)
+    (fp_text reference Q1 (at 0.635 3.81 450) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value Q_NMOS_GSD (at 0 3.81 270) (layer F.Fab) hide
@@ -311,7 +311,7 @@
     (tags "resistor 0805")
     (path /56B9DECB)
     (attr smd)
-    (fp_text reference R2 (at -3.81 0.635 270) (layer F.SilkS)
+    (fp_text reference R2 (at -3.81 0 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text value 4k7 (at 0 2.1 270) (layer F.Fab) hide
