@@ -1,4 +1,4 @@
-(module TCST2103 (layer F.Cu) (tedit 570824F0)
+(module tcst2103 (layer F.Cu) (tedit 570824F0)
   (fp_text reference SW (at 11.43 5.08) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )

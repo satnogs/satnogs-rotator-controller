@@ -1,17 +1,17 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP MAX485
-D RS422/RS485 Transceiver
-$ENDCMP
-#
-$CMP Pro_Micro
+$CMP ARDUINO_PRO_MICRO
 D Sparkfun Pro Micro
 K Arduino Compatible
 $ENDCMP
 #
-$CMP Pro_Mini
+$CMP ARDUINO_PRO_MINI
 D Arduino Pro Mini
 K Arduino
+$ENDCMP
+#
+$CMP MAX485
+D RS422/RS485 Transceiver
 $ENDCMP
 #
 $CMP SW_PUSH

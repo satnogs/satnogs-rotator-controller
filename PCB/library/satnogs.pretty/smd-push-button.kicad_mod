@@ -1,4 +1,4 @@
-(module smd_push2 (layer F.Cu) (tedit 0)
+(module smd-push-button (layer F.Cu) (tedit 0)
   (descr "SMD Pushbutton 2")
   (autoplace_cost180 10)
   (fp_text reference SMD_PUSH2 (at 0 -3.59918) (layer F.SilkS)
