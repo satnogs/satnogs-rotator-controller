@@ -148,9 +148,9 @@ F 8 "1.85€" H 5510 4610 60  0001 C CNN "Price"
 	1    5510 4610
 	-1   0    0    1   
 $EndComp
-Text Label 5110 4410 0    60   ~ 0
+Text Label 5110 4510 0    60   ~ 0
 SCL
-Text Label 5910 4510 2    60   ~ 0
+Text Label 5910 4410 2    60   ~ 0
 SDA
 $Comp
 L GND #PWR04
@@ -321,9 +321,9 @@ F 3 "" H 4860 4810 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 Connection ~ 4860 4710
-Text Label 5910 4410 2    60   ~ 0
+Text Label 5110 4410 0    60   ~ 0
 SDA
-Text Label 5110 4510 0    60   ~ 0
+Text Label 5910 4510 2    60   ~ 0
 SCL
 $Comp
 L Q_NMOS_GSD Q1
