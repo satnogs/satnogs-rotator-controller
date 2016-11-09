@@ -14,6 +14,11 @@ $CMP MAX485
 D RS422/RS485 Transceiver
 $ENDCMP
 #
+$CMP PCA9540B
+D I2C Bus Multiplexer - 2 channels
+K I2C, multiplexer
+$ENDCMP
+#
 $CMP SW_PUSH
 D Push Button
 K Switch
