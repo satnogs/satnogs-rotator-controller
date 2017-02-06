@@ -15,7 +15,7 @@
 #define T_DELAY 60000 /*Time to disable the motors in millisecond*/
 
 #define HOME_AZ 4 /*Homing switch for Azimuth*/
-#define HOME_EL 7 /*Homing switch for Elevation*/
+#define HOME_EL 3 /*Homing switch for Elevation*/
 
 #define MAX_AZ_ANGLE 365 /*Maximum Angle of Azimuth for homing scanning*/
 #define MAX_EL_ANGLE 365 /*Maximum Angle of Elevation for homing scanning*/
