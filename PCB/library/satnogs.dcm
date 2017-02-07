@@ -1,32 +1,35 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP ARDUINO_PRO_MICRO
-D Sparkfun Pro Micro
-K Arduino Compatible
+$CMP AS5601
+D Magnetic Rotary Encoder
 $ENDCMP
 #
-$CMP ARDUINO_PRO_MINI
-D Arduino Pro Mini
-K Arduino
-$ENDCMP
-#
-$CMP MAX485
-D RS422/RS485 Transceiver
+$CMP Arduino_Pro_Mini
+D Arduino Pro Mini - ATmega328p
 $ENDCMP
 #
 $CMP PCA9540B
-D I2C Bus Multiplexer - 2 channels
-K I2C, multiplexer
+D I2C Multiplexer
 $ENDCMP
 #
-$CMP SW_PUSH
-D Push Button
-K Switch
+$CMP Pololu_A4988
+D Stepper Motor Driver
+$ENDCMP
+#
+$CMP Pololu_Dual_MC33926
+D Dual DC Motor Driver
+$ENDCMP
+#
+$CMP SN65HVD485EDR
+D RS485 Transceiver
+$ENDCMP
+#
+$CMP TC74
+D Temperature sensor, I2C
 $ENDCMP
 #
 $CMP TCST2103
-D Transmissive Optical Sensor with Phototransistor Output
-K Optical switch, Photo interrupter, Counter, Encoder
+D Optical Sensor
 $ENDCMP
 #
 #End Doc Library
