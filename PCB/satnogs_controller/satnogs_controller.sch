@@ -204,12 +204,12 @@ RTS
 $Comp
 L PWR_FLAG #FLG04
 U 1 1 568E938B
-P 1345 6590
-F 0 "#FLG04" H 1345 6685 50  0001 C CNN
-F 1 "PWR_FLAG" H 1340 6775 50  0000 C CNN
-F 2 "" H 1345 6590 60  0000 C CNN
-F 3 "" H 1345 6590 60  0000 C CNN
-	1    1345 6590
+P 1345 6890
+F 0 "#FLG04" H 1345 6985 50  0001 C CNN
+F 1 "PWR_FLAG" H 1340 7075 50  0000 C CNN
+F 2 "" H 1345 6890 60  0000 C CNN
+F 3 "" H 1345 6890 60  0000 C CNN
+	1    1345 6890
 	-1   0    0    1   
 $EndComp
 Text Label 820  3410 2    60   ~ 0
@@ -592,27 +592,27 @@ PB5
 $Comp
 L FILTER FB1
 U 1 1 57E7000D
-P 1505 5920
-F 0 "FB1" H 1505 6070 50  0000 C CNN
-F 1 "FILTER" H 1505 5820 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" H 1505 5920 50  0001 C CNN
-F 3 "" H 1505 5920 50  0001 C CNN
-F 4 "BLM21PG221SN1D" H 1505 5920 60  0001 C CNN "Mnf."
-F 5 "0.104" H 1505 5920 60  0001 C CNN "Price"
-	1    1505 5920
+P 1475 5920
+F 0 "FB1" H 1475 6070 50  0000 C CNN
+F 1 "FILTER" H 1475 5820 50  0000 C CNN
+F 2 "Resistors_SMD:R_0805_HandSoldering" H 1475 5920 50  0001 C CNN
+F 3 "" H 1475 5920 50  0001 C CNN
+F 4 "BLM21PG221SN1D" H 1475 5920 60  0001 C CNN "Mnf."
+F 5 "0.104" H 1475 5920 60  0001 C CNN "Price"
+	1    1475 5920
 	1    0    0    -1  
 $EndComp
 $Comp
 L FUSE F1
 U 1 1 57E70188
-P 2140 5920
-F 0 "F1" H 2240 5970 50  0000 C CNN
-F 1 "FUSE" H 2040 5870 50  0000 C CNN
-F 2 "satnogs:FuseHolder_Keystone-3557-10" H 2140 5920 50  0001 C CNN
-F 3 "" H 2140 5920 50  0001 C CNN
-F 4 "Keystone Electronics 3557-10" H 2140 5920 60  0001 C CNN "Mnf."
-F 5 "1.09" H 2140 5920 60  0001 C CNN "Price"
-	1    2140 5920
+P 2100 5920
+F 0 "F1" H 2200 5970 50  0000 C CNN
+F 1 "FUSE" H 2000 5870 50  0000 C CNN
+F 2 "satnogs:FuseHolder_Keystone-3557-10" H 2100 5920 50  0001 C CNN
+F 3 "" H 2100 5920 50  0001 C CNN
+F 4 "Keystone Electronics 3557-10" H 2100 5920 60  0001 C CNN "Mnf."
+F 5 "1.09" H 2100 5920 60  0001 C CNN "Price"
+	1    2100 5920
 	1    0    0    -1  
 $EndComp
 Text Notes 9660 5020 0    50   ~ 0
@@ -664,7 +664,7 @@ Text Label 8820 1580 0    60   ~ 0
 M1D2
 Text Label 1240 4350 2    60   ~ 0
 VIN
-Text Label 1345 6535 0    60   ~ 0
+Text Label 1345 6835 0    60   ~ 0
 VIN
 $Comp
 L GND #PWR09
@@ -718,14 +718,14 @@ $EndComp
 $Comp
 L D_Schottky D2
 U 1 1 57E9650D
-P 2830 6095
-F 0 "D2" H 2830 6195 50  0000 C CNN
-F 1 "D_Schottky" H 2830 5995 50  0000 C CNN
-F 2 "satnogs:DO-214AB_Handsoldering" H 2830 6095 50  0001 C CNN
-F 3 "" H 2830 6095 50  0000 C CNN
-F 4 "CDBC560-G" H 2830 6095 60  0001 C CNN "Mnf."
-F 5 "0.67" H 2830 6095 60  0001 C CNN "Price"
-	1    2830 6095
+P 2510 6120
+F 0 "D2" H 2510 6220 50  0000 C CNN
+F 1 "D_Schottky" H 2510 6020 50  0000 C CNN
+F 2 "satnogs:DO-214AB_Handsoldering" H 2510 6120 50  0001 C CNN
+F 3 "" H 2510 6120 50  0000 C CNN
+F 4 "CDBC560-G" H 2510 6120 60  0001 C CNN "Mnf."
+F 5 "0.67" H 2510 6120 60  0001 C CNN "Price"
+	1    2510 6120
 	0    1    1    0   
 $EndComp
 $Comp
@@ -943,7 +943,7 @@ F 5 "0.094" H 4900 5920 60  0001 C CNN "Price"
 	1    4900 5920
 	0    -1   -1   0   
 $EndComp
-Text Notes 870  6180 0    50   ~ 0
+Text Notes 1640 6550 0    50   ~ 0
 VIN: 20 - 60V
 $Comp
 L C_Small C11
@@ -1094,23 +1094,23 @@ $EndComp
 $Comp
 L PWR_FLAG #FLG017
 U 1 1 582A772F
-P 1040 6565
-F 0 "#FLG017" H 1040 6660 50  0001 C CNN
-F 1 "PWR_FLAG" H 1040 6755 50  0000 C CNN
-F 2 "" H 1040 6565 60  0000 C CNN
-F 3 "" H 1040 6565 60  0000 C CNN
-	1    1040 6565
+P 1040 6865
+F 0 "#FLG017" H 1040 6960 50  0001 C CNN
+F 1 "PWR_FLAG" H 1040 7055 50  0000 C CNN
+F 2 "" H 1040 6865 60  0000 C CNN
+F 3 "" H 1040 6865 60  0000 C CNN
+	1    1040 6865
 	1    0    0    -1  
 $EndComp
 $Comp
 L GND #PWR018
 U 1 1 582A7F4E
-P 1040 6620
-F 0 "#PWR018" H 1040 6370 50  0001 C CNN
-F 1 "GND" H 1040 6470 50  0000 C CNN
-F 2 "" H 1040 6620 60  0000 C CNN
-F 3 "" H 1040 6620 60  0000 C CNN
-	1    1040 6620
+P 1040 6920
+F 0 "#PWR018" H 1040 6670 50  0001 C CNN
+F 1 "GND" H 1040 6770 50  0000 C CNN
+F 2 "" H 1040 6920 60  0000 C CNN
+F 3 "" H 1040 6920 60  0000 C CNN
+	1    1040 6920
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1157,8 +1157,8 @@ PB4
 Text Notes 4690 780  0    50   ~ 0
 \nFor distance problems, use P82B715\nI2C extender (for now we don't  need)
 Text Notes 1645 6670 0    50   ~ 0
-D2 is for inverse current protection
-Text Notes 880  7300 0    50   ~ 0
+D2 is for inverse voltage protection
+Text Notes 870  7540 0    50   ~ 0
 Always follow NEC guidelines for applying low-voltage fuses. Generally,\nthe MINIMUM fuse size should be based on 125% of the circuits full load\ncurrent. Time-delay fuses should be used for inductive loads.
 $Comp
 L CONN_01X01 P5
@@ -1758,18 +1758,14 @@ F 3 "" H 8120 2950 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	1345 6590 1345 6535
+	1345 6890 1345 6835
 Wire Wire Line
-	2830 6245 2830 6360
+	1125 5920 1030 5920
 Wire Wire Line
-	1155 5920 1030 5920
-Wire Wire Line
-	2830 5840 2830 5945
-Wire Wire Line
-	2390 5920 3740 5920
+	2350 5920 3740 5920
 Connection ~ 2830 5920
 Wire Wire Line
-	1855 5920 1890 5920
+	1825 5920 1850 5920
 Wire Wire Line
 	3070 5920 3070 5990
 Wire Wire Line
@@ -1843,7 +1839,7 @@ Wire Wire Line
 	5045 5920 5045 6120
 Connection ~ 5045 6120
 Wire Wire Line
-	1040 6620 1040 6565
+	1040 6920 1040 6865
 Wire Wire Line
 	5355 7190 5495 7190
 Wire Notes Line
@@ -2270,6 +2266,59 @@ Wire Wire Line
 Wire Wire Line
 	5270 4640 5270 4680
 Connection ~ 2830 6280
+$Comp
+L CP C15
+U 1 1 589F63F7
+P 2830 6100
+F 0 "C15" H 2855 6200 50  0000 L CNN
+F 1 "100u" H 2855 6000 50  0000 L CNN
+F 2 "satnogs:CP_Radial_D10.0mm_P5.00mm" H 2868 5950 30  0001 C CNN
+F 3 "" H 2830 6100 60  0001 C CNN
+F 4 "RGA101M1JBK-1012G" H 2830 6100 60  0001 C CNN "Mnf."
+F 5 "0.248" H 2830 6100 60  0001 C CNN "Price"
+	1    2830 6100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR058
+U 1 1 589F7873
+P 1080 6360
+F 0 "#PWR058" H 1080 6110 50  0001 C CNN
+F 1 "GND" H 1080 6210 50  0000 C CNN
+F 2 "" H 1080 6360 60  0000 C CNN
+F 3 "" H 1080 6360 60  0000 C CNN
+	1    1080 6360
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	3070 6280 2830 6280
+	2510 6280 3070 6280
+Wire Wire Line
+	2830 6250 2830 6360
+Wire Wire Line
+	2830 5840 2830 5950
+Wire Wire Line
+	2510 5970 2510 5920
+Connection ~ 2510 5920
+Wire Wire Line
+	2510 6270 2510 6280
+$Comp
+L D_TVS D4
+U 1 1 58A4445A
+P 1080 6160
+F 0 "D4" H 1080 6260 50  0000 C CNN
+F 1 "D_TVS" H 1080 6060 50  0000 C CNN
+F 2 "satnogs:DO-214AB_Handsoldering" H 1080 6160 50  0001 C CNN
+F 3 "" H 1080 6160 50  0000 C CNN
+F 4 "SMCJ48A-E3/57T" H 1080 6160 60  0001 C CNN "Mnf."
+F 5 "0.472" H 1080 6160 60  0001 C CNN "Price"
+	1    1080 6160
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1080 6010 1080 5920
+Connection ~ 1080 5920
+Wire Wire Line
+	1080 6360 1080 6310
+Text Notes 1650 6770 0    50   ~ 0
+D4 is optional, for transient voltage suppressor
 $EndSCHEMATC
